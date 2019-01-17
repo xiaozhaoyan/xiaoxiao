@@ -1,46 +1,2271 @@
 ﻿<!DOCTYPE HTML>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="renderer" content="webkit|ie-comp|ie-stand">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-<!--[if lt IE 9]>
-<script type="text/javascript" src="lib/html5shiv.js"></script>
-<script type="text/javascript" src="lib/respond.min.js"></script>
-<![endif]-->
-<link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
-<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css" />
-<link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.8/iconfont.css" />
-<link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css" id="skin" />
-<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css" />
-<!--[if IE 6]>
-<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
-<script>DD_belatedPNG.fix('*');</script>
-<![endif]-->
-<title>HTML3</title>
-<link rel="stylesheet" href="lib/zTree/v3/css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="lib/html5shiv.js"></script>
+    <script type="text/javascript" src="lib/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.8/iconfont.css"/>
+    <link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css" id="skin"/>
+    <link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css"/>
+    <!--[if IE 6]>
+    <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js"></script>
+    <script>DD_belatedPNG.fix('*');</script>
+    <![endif]-->
+    <title>基本功二</title>
+    <link rel="stylesheet" href="lib/zTree/v3/css/zTreeStyle/zTreeStyle.css" type="text/css">
 </head>
 <body class="pos-r">
-<div class="pos-a" style="width:200px;left:0;top:0; bottom:0; height:100%; border-right:1px solid #e5e5e5; background-color:#f5f5f5; overflow:auto;">
-	<ul id="treeDemo" class="ztree"></ul>
+<div class="pos-a"
+     style="width:2rem;left:0;top:0; bottom:0; height:100%; border-right:1px solid #e5e5e5; background-color:#f5f5f5; overflow:auto;">
+    <ul id="treeDemo" class="ztree"></ul>
 </div>
-<div style="margin-left:200px;">
-	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> HTML3 <span class="c-gray en">&gt;</span> HTML3 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div style="margin-left:2rem;">
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 基本工二 <span
+            class="c-gray en">&gt;</span> 基本功二 <a class="btn btn-success radius r"
+                                                   style="line-height:1.6em;margin-top:3px"
+                                                   href="javascript:location.replace(location.href);" title="刷新"><i
+            class="Hui-iconfont">&#xe68f;</i></a></nav>
+    <!--====================================================================================-->
+    <div class="article fmt article__content" data-id="1190000017911044" data-license="cc">
+        <h2 id="articleHeader0">1.一像素</h2>
+        <p><strong>伪类 + transform 实现</strong><br>对于老项目，有没有什么办法能兼容1px的尴尬问题了，个人认为伪类+transform是比较完美的方法了。</p>
+        <blockquote>原理是把原先元素的 border 去掉，然后利用 :before 或者 :after 重做 border ，并 transform 的 scale 缩小一半，原先的元素相对定位，新做的 border
+            绝对定位。
+        </blockquote>
+        <p>单条border样式设置：</p>
+        <div class="widget-codetool" style="display: none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text=".scale-1px{
+  position: relative;
+  border:none;
+}
+.scale-1px:after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  background: #000;
+  width: 100%;
+  height: 1px;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs css"><code><span class="hljs-selector-class">.scale-1px</span>{
+  <span class="hljs-attribute">position</span>: relative;
+  <span class="hljs-attribute">border</span>:none;
+}
+<span class="hljs-selector-class">.scale-1px</span><span class="hljs-selector-pseudo">:after</span>{
+  <span class="hljs-attribute">content</span>: <span class="hljs-string">''</span>;
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">bottom</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#000</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">-webkit-transform</span>: <span class="hljs-built_in">scaleY</span>(0.5);
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scaleY</span>(0.5);
+  <span class="hljs-attribute">-webkit-transform-origin</span>: <span class="hljs-number">0</span> <span
+                    class="hljs-number">0</span>;
+  <span class="hljs-attribute">transform-origin</span>: <span class="hljs-number">0</span> <span
+                    class="hljs-number">0</span>;
+}</code></pre>
+        <p>四条boder样式设置:</p>
+        <div class="widget-codetool" style="display: none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text=".scale-1px{
+  position: relative;
+  margin-bottom: 20px;
+  border:none;
+}
+.scale-1px:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid #000;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 200%;
+  height: 200%;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+}" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs css"><code><span class="hljs-selector-class">.scale-1px</span>{
+  <span class="hljs-attribute">position</span>: relative;
+  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">border</span>:none;
+}
+<span class="hljs-selector-class">.scale-1px</span><span class="hljs-selector-pseudo">:after</span>{
+  <span class="hljs-attribute">content</span>: <span class="hljs-string">''</span>;
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span
+                    class="hljs-number">#000</span>;
+  <span class="hljs-attribute">-webkit-box-sizing</span>: border-box;
+  <span class="hljs-attribute">box-sizing</span>: border-box;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">200%</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">200%</span>;
+  <span class="hljs-attribute">-webkit-transform</span>: <span class="hljs-built_in">scale</span>(0.5);
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(0.5);
+  <span class="hljs-attribute">-webkit-transform-origin</span>: left top;
+  <span class="hljs-attribute">transform-origin</span>: left top;
+}</code></pre>
+        <p>最好在使用前也判断一下，结合 JS 代码，判断是否 Retina 屏：</p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="if(window.devicePixelRatio &amp;&amp; devicePixelRatio >= 2){
+  document.querySelector('ul').className = 'scale-1px';
+}" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs dart"><code><span class="hljs-keyword">if</span>(<span class="hljs-built_in">window</span>.devicePixelRatio &amp;&amp; devicePixelRatio &gt;= <span
+                class="hljs-number">2</span>){
+  <span class="hljs-built_in">document</span>.<span class="hljs-built_in">querySelector</span>(<span
+                    class="hljs-string">'ul'</span>).className = <span class="hljs-string">'scale-1px'</span>;
+}</code></pre>
+        <p><strong>方法二</strong></p>
+        <div class="widget-codetool" style="display: none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="/*移动端正常展示1px的问题 start*/
+%border-1px{
+    display: block;
+    position:absolute;
+    left: 0;
+    width: 100%;
+    content: ' ';
+}
+.border-1px{
+    position: relative;
+    &amp;::after{
+        @extend %border-1px;
+        bottom: 0;
+        border-top: 1px solid #ccc;
+    }
+    &amp;::before{
+        @extend %border-1px;
+        top: 0;
+        border-bottom: 1px solid #ccc;
+    }
+}
 
+@media (-webkit-min-device-pixel-ratio:1.5),(min-device-pixel-ratio:1.5){
+    .border-1px{
+        &amp;::after{
+            -webkit-transform: scaleY(0.7);
+            transform: scaleY(0.7);
+        }
+    }
+}
+
+@media (-webkit-min-device-pixel-ratio:2),(min-device-pixel-ratio:2){
+    .border-1px{
+        &amp;::after{
+            -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+        }
+    }
+}
+/*移动端正常展示1px的问题 end*/" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs properties"><code><span class="hljs-meta">/*移动端正常展示1px的问题</span> <span class="hljs-string">start*/</span>
+<span class="hljs-attr">%border-1px{</span>
+    <span class="hljs-attr">display</span>: <span class="hljs-string">block;</span>
+    <span class="hljs-attr">position</span>:<span class="hljs-string">absolute;</span>
+    <span class="hljs-attr">left</span>: <span class="hljs-string">0;</span>
+    <span class="hljs-attr">width</span>: <span class="hljs-string">100%;</span>
+    <span class="hljs-attr">content</span>: <span class="hljs-string">' ';</span>
+<span class="hljs-attr">}</span>
+<span class="hljs-attr">.border-1px{</span>
+    <span class="hljs-attr">position</span>: <span class="hljs-string">relative;</span>
+    <span class="hljs-meta">&amp;</span>:<span class="hljs-string">:after{</span>
+        <span class="hljs-meta">@extend</span> <span class="hljs-string">%border-1px;</span>
+        <span class="hljs-attr">bottom</span>: <span class="hljs-string">0;</span>
+        <span class="hljs-meta">border-top</span>: <span class="hljs-string">1px solid #ccc;</span>
+    <span class="hljs-attr">}</span>
+    <span class="hljs-meta">&amp;</span>:<span class="hljs-string">:before{</span>
+        <span class="hljs-meta">@extend</span> <span class="hljs-string">%border-1px;</span>
+        <span class="hljs-attr">top</span>: <span class="hljs-string">0;</span>
+        <span class="hljs-meta">border-bottom</span>: <span class="hljs-string">1px solid #ccc;</span>
+    <span class="hljs-attr">}</span>
+<span class="hljs-attr">}</span>
+
+<span class="hljs-meta">@media</span> <span class="hljs-string">(-webkit-min-device-pixel-ratio:1.5),(min-device-pixel-ratio:1.5){</span>
+    <span class="hljs-attr">.border-1px{</span>
+        <span class="hljs-meta">&amp;</span>:<span class="hljs-string">:after{</span>
+            <span class="hljs-meta">-webkit-transform</span>: <span class="hljs-string">scaleY(0.7);</span>
+            <span class="hljs-attr">transform</span>: <span class="hljs-string">scaleY(0.7);</span>
+        <span class="hljs-attr">}</span>
+    <span class="hljs-attr">}</span>
+<span class="hljs-attr">}</span>
+
+<span class="hljs-meta">@media</span> <span class="hljs-string">(-webkit-min-device-pixel-ratio:2),(min-device-pixel-ratio:2){</span>
+    <span class="hljs-attr">.border-1px{</span>
+        <span class="hljs-meta">&amp;</span>:<span class="hljs-string">:after{</span>
+            <span class="hljs-meta">-webkit-transform</span>: <span class="hljs-string">scaleY(0.5);</span>
+            <span class="hljs-attr">transform</span>: <span class="hljs-string">scaleY(0.5);</span>
+        <span class="hljs-attr">}</span>
+    <span class="hljs-attr">}</span>
+<span class="hljs-attr">}</span>
+<span class="hljs-meta">/*移动端正常展示1px的问题</span> <span class="hljs-string">end*/</span></code></pre>
+        <p><strong>方法三</strong></p>
+        <div class="widget-codetool" style="display: none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="    .hairline-border {
+      box-shadow: 0 0 0 1px;
+    }
+
+    @media (min-resolution: 2dppx) {
+      .hairline-border {
+        box-shadow: 0 0 0 0.5px red;
+      }
+    }
+
+    @media (min-resolution: 3dppx) {
+      .hairline-border {
+        box-shadow: 0 0 0 0.33333333px;
+      }
+    }
+
+    @media (min-resolution: 4dppx) {
+      .hairline-border {
+        box-shadow: 0 0 0 0.25px;
+      }
+    }" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs css"><code>    <span class="hljs-selector-class">.hairline-border</span> {
+      <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span
+                    class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1px</span>;
+    }
+
+    @<span class="hljs-keyword">media</span> (min-resolution: <span class="hljs-number">2dppx</span>) {
+      <span class="hljs-selector-class">.hairline-border</span> {
+        <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span
+                    class="hljs-number">0</span> <span class="hljs-number">0</span> <span
+                    class="hljs-number">0.5px</span> red;
+      }
+    }
+
+    @<span class="hljs-keyword">media</span> (min-resolution: <span class="hljs-number">3dppx</span>) {
+      <span class="hljs-selector-class">.hairline-border</span> {
+        <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span
+                    class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0.33333333px</span>;
+      }
+    }
+
+    @<span class="hljs-keyword">media</span> (min-resolution: <span class="hljs-number">4dppx</span>) {
+      <span class="hljs-selector-class">.hairline-border</span> {
+        <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span
+                    class="hljs-number">0</span> <span class="hljs-number">0</span> <span
+                    class="hljs-number">0.25px</span>;
+      }
+    }</code></pre>
+        <h2 id="articleHeader1">2.动画</h2>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="animation:mymove 5s infinite;
+
+@keyframes mymove {
+    from {top:0px;}
+    to {top:200px;}
+}" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs css"><code><span class="hljs-selector-tag">animation</span><span class="hljs-selector-pseudo">:mymove</span> 5<span
+                class="hljs-selector-tag">s</span> <span class="hljs-selector-tag">infinite</span>;
+
+@<span class="hljs-keyword">keyframes</span> mymove {
+    <span class="hljs-selector-tag">from</span> {<span class="hljs-attribute">top</span>:<span
+                    class="hljs-number">0px</span>;}
+    <span class="hljs-selector-tag">to</span> {<span class="hljs-attribute">top</span>:<span
+                    class="hljs-number">200px</span>;}
+}</code></pre>
+        <p>js实现一个持续的动画效果</p>
+        <div class="widget-codetool" style="display: none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="//兼容性处理
+window.requestAnimFrame = (function(){
+  return  window.requestAnimationFrame       ||
+          window.webkitRequestAnimationFrame ||
+          window.mozRequestAnimationFrame    ||
+          function(callback){
+            window.setTimeout(callback, 1000 / 60);
+          };
+})();
+
+var e = document.getElementById(&quot;e&quot;);
+var flag = true;
+var left = 0;
+
+function render() {
+    left == 0 ? flag = true : left == 100 ? flag = false : '';
+    flag ? e.style.left = ` ${left++}px` :
+        e.style.left = ` ${left--}px`;
+}
+
+(function animloop() {
+    render();
+    requestAnimFrame(animloop);
+})();" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-comment">//兼容性处理</span>
+<span class="hljs-built_in">window</span>.requestAnimFrame = (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>)</span>{
+  <span class="hljs-keyword">return</span>  <span class="hljs-built_in">window</span>.requestAnimationFrame       ||
+          <span class="hljs-built_in">window</span>.webkitRequestAnimationFrame ||
+          <span class="hljs-built_in">window</span>.mozRequestAnimationFrame    ||
+          <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                  class="hljs-params">callback</span>)</span>{
+            <span class="hljs-built_in">window</span>.setTimeout(callback, <span class="hljs-number">1000</span> / <span
+                    class="hljs-number">60</span>);
+          };
+})();
+
+<span class="hljs-keyword">var</span> e = <span class="hljs-built_in">document</span>.getElementById(<span
+                    class="hljs-string">"e"</span>);
+<span class="hljs-keyword">var</span> flag = <span class="hljs-literal">true</span>;
+<span class="hljs-keyword">var</span> left = <span class="hljs-number">0</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render</span>(<span
+        class="hljs-params"></span>) </span>{
+    left == <span class="hljs-number">0</span> ? flag = <span class="hljs-literal">true</span> : left == <span
+                    class="hljs-number">100</span> ? flag = <span class="hljs-literal">false</span> : <span
+                    class="hljs-string">''</span>;
+    flag ? e.style.left = <span class="hljs-string">` <span class="hljs-subst">${left++}</span>px`</span> :
+        e.style.left = <span class="hljs-string">` <span class="hljs-subst">${left--}</span>px`</span>;
+}
+
+(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">animloop</span>(<span
+                    class="hljs-params"></span>) </span>{
+    render();
+    requestAnimFrame(animloop);
+})();</code></pre>
+        <h2 id="articleHeader2">3. 实现sum(2)(3)</h2>
+        <div class="widget-codetool" style="display: none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="// 写一个 function 让下面两行代码输出的结果都为 5
+console.log(sum(2, 3));
+console.log(sum(2)(3));" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs fortran"><code>// 写一个 <span class="hljs-function"><span
+                class="hljs-keyword">function</span></span> 让下面两行代码输出的结果都为 <span class="hljs-number">5</span>
+console.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">sum</span>(<span class="hljs-number">2</span>, <span
+                    class="hljs-number">3</span>));
+console.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">sum</span>(<span class="hljs-number">2</span>)(<span
+                    class="hljs-number">3</span>));</code></pre>
+        <p>实现</p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="function sum() {
+    var cache;
+    if (arguments.length === 1) {
+        cache = arguments[0];
+        return function ( number ) {return cache + number;};
+    }
+    else return arguments[0] + arguments[1];
+};" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs typescript"><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span
+                class="hljs-title">sum</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> cache;
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">arguments</span>.length === <span
+                    class="hljs-number">1</span>) {
+        cache = <span class="hljs-built_in">arguments</span>[<span class="hljs-number">0</span>];
+        <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span
+                    class="hljs-params"> <span class="hljs-built_in">number</span> </span>) </span>{<span
+                    class="hljs-keyword">return</span> cache + <span class="hljs-built_in">number</span>;};
+    }
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-built_in">arguments</span>[<span
+                    class="hljs-number">0</span>] + <span class="hljs-built_in">arguments</span>[<span
+                    class="hljs-number">1</span>];
+};</code></pre>
+        <h2 id="articleHeader3">4. 函数柯里化</h2>
+        <blockquote>函数柯里化指的是将能够接收多个参数的函数转化为接收单一参数的函数，并且返回接收余下参数或结果的新函数的技术。</blockquote>
+        <p>函数柯里化的主要作用和特点就是参数复用、提前返回和延迟计算/执行。</p>
+        <h4>1. 参数复用</h4>
+        <p><strong>引导</strong></p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="// 普通函数
+function add(x,y){
+    return x + y;
+}
+
+add(3,4);   //5
+
+// 实现了柯里化的函数
+// 接收参数，返回新函数，把参数传给新函数使用，最后求值
+let add = function(x){
+    return function(y){
+        return x + y;
+    }
+};
+
+add(3)(4);  // 7" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-comment">// 普通函数</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span
+        class="hljs-params">x,y</span>)</span>{
+    <span class="hljs-keyword">return</span> x + y;
+}
+
+add(<span class="hljs-number">3</span>,<span class="hljs-number">4</span>);   <span class="hljs-comment">//5</span>
+
+<span class="hljs-comment">// 实现了柯里化的函数</span>
+<span class="hljs-comment">// 接收参数，返回新函数，把参数传给新函数使用，最后求值</span>
+<span class="hljs-keyword">let</span> add = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params">x</span>)</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span
+                    class="hljs-keyword">function</span>(<span class="hljs-params">y</span>)</span>{
+        <span class="hljs-keyword">return</span> x + y;
+    }
+};
+
+add(<span class="hljs-number">3</span>)(<span class="hljs-number">4</span>);  <span
+                    class="hljs-comment">// 7</span></code></pre>
+        <p><strong>通用的柯里化函数</strong></p>
+        <p>感觉currying就是返回函数的函数，在此函数闭包中定义了私有域变量。</p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="function curry(fn) {
+    let slice = Array.prototype.slice,  // 将slice缓存起来
+        args = slice.call(arguments, 1);   // 这里将arguments转成数组并保存
+
+    return function() {
+        // 将新旧的参数拼接起来
+        let newArgs = args.concat(slice.call(arguments));
+        return fn.apply(null, newArgs); // 返回执行的fn并传递最新的参数
+    }
+}" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span
+                class="hljs-title">curry</span>(<span class="hljs-params">fn</span>) </span>{
+    <span class="hljs-keyword">let</span> slice = <span class="hljs-built_in">Array</span>.prototype.slice,  <span
+                    class="hljs-comment">// 将slice缓存起来</span>
+        args = slice.call(<span class="hljs-built_in">arguments</span>, <span class="hljs-number">1</span>);   <span
+                    class="hljs-comment">// 这里将arguments转成数组并保存</span>
+
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span
+                    class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-comment">// 将新旧的参数拼接起来</span>
+        <span class="hljs-keyword">let</span> newArgs = args.concat(slice.call(<span
+                    class="hljs-built_in">arguments</span>));
+        <span class="hljs-keyword">return</span> fn.apply(<span class="hljs-literal">null</span>, newArgs); <span
+                    class="hljs-comment">// 返回执行的fn并传递最新的参数</span>
+    }
+}</code></pre>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="if (typeof Function.prototype.bind === &quot;undefined&quot;){
+  Function.prototype.bind = function (thisArgs){
+    var fn = this,
+        slice = Array.prototype.slice,
+        args = slice.call(arguments, 1);
+    return function (){
+      let newArgs = args.concat(slice.call(arguments))
+      return fn.apply(thisArgs, newArgs);
+    }
+  }
+}" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-keyword">if</span> (<span
+                class="hljs-keyword">typeof</span> <span class="hljs-built_in">Function</span>.prototype.bind === <span
+                class="hljs-string">"undefined"</span>){
+  <span class="hljs-built_in">Function</span>.prototype.bind = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span
+                    class="hljs-params">thisArgs</span>)</span>{
+    <span class="hljs-keyword">var</span> fn = <span class="hljs-keyword">this</span>,
+        slice = <span class="hljs-built_in">Array</span>.prototype.slice,
+        args = slice.call(<span class="hljs-built_in">arguments</span>, <span class="hljs-number">1</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span
+                    class="hljs-keyword">function</span> (<span class="hljs-params"></span>)</span>{
+      <span class="hljs-keyword">let</span> newArgs = args.concat(slice.call(<span
+                    class="hljs-built_in">arguments</span>))
+      <span class="hljs-keyword">return</span> fn.apply(thisArgs, newArgs);
+    }
+  }
+}</code></pre>
+        <p><strong>ES6版的柯里化函数</strong></p>
+        <div class="widget-codetool" style="display: none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="function curry(fn, ...allArgs) {
+    const g = (...allArgs) => allArgs.length >= fn.length ?
+        fn(...allArgs) : (...args) => g(...allArgs, ...args)
+
+    return g;
+}
+
+// 测试用例
+const foo = curry((a, b, c, d) => {
+    console.log(a, b, c, d);
+});
+foo(1)(2)(3)(4);    // 1 2 3 4
+const f = foo(1)(2)(3);
+f(5);               // 1 2 3 5" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs actionscript"><code><span class="hljs-function"><span
+                class="hljs-keyword">function</span> <span class="hljs-title">curry</span><span class="hljs-params">(fn, <span
+                class="hljs-rest_arg">...allArgs</span>)</span> </span>{
+    <span class="hljs-keyword">const</span> g = (...allArgs) =&gt; allArgs.length &gt;= fn.length ?
+        fn(...allArgs) : (...args) =&gt; g(...allArgs, ...args)
+
+    <span class="hljs-keyword">return</span> g;
+}
+
+<span class="hljs-comment">// 测试用例</span>
+<span class="hljs-keyword">const</span> foo = curry((a, b, c, d) =&gt; {
+    console.log(a, b, c, d);
+});
+foo(<span class="hljs-number">1</span>)(<span class="hljs-number">2</span>)(<span class="hljs-number">3</span>)(<span
+                    class="hljs-number">4</span>);    <span class="hljs-comment">// 1 2 3 4</span>
+<span class="hljs-keyword">const</span> f = foo(<span class="hljs-number">1</span>)(<span class="hljs-number">2</span>)(<span
+                    class="hljs-number">3</span>);
+f(<span class="hljs-number">5</span>);               <span class="hljs-comment">// 1 2 3 5</span></code></pre>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="function trueCurrying(fn, ...args) {
+    if (args.length >= fn.length) {
+        return fn(...args)
+    }
+    return function (...args2) {
+        return trueCurrying(fn, ...args, ...args2)
+    }
+}
+// 比较多次接受的参数总数与函数定义时的入参数量，
+//当接受参数的数量大于或等于被 Currying 函数的传入参数数量时，
+//就返回计算结果，否则返回一个继续接受参数的函数。
+//注意这点和上边的区别" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs actionscript"><code><span class="hljs-function"><span
+                class="hljs-keyword">function</span> <span class="hljs-title">trueCurrying</span><span
+                class="hljs-params">(fn, <span class="hljs-rest_arg">...args</span>)</span> </span>{
+    <span class="hljs-keyword">if</span> (args.length &gt;= fn.length) {
+        <span class="hljs-keyword">return</span> fn(...args)
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span
+                    class="hljs-keyword">function</span> <span class="hljs-params">(<span
+                    class="hljs-rest_arg">...args2</span>)</span> </span>{
+        <span class="hljs-keyword">return</span> trueCurrying(fn, ...args, ...args2)
+    }
+}
+<span class="hljs-comment">// 比较多次接受的参数总数与函数定义时的入参数量，</span>
+<span class="hljs-comment">//当接受参数的数量大于或等于被 Currying 函数的传入参数数量时，</span>
+<span class="hljs-comment">//就返回计算结果，否则返回一个继续接受参数的函数。</span>
+<span class="hljs-comment">//注意这点和上边的区别</span></code></pre>
+        <p><strong>题目：需要写一个函数，满足</strong></p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="curry(fn)(1)(2)(3) //6" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs lisp"><code style="word-break: break-word; white-space: initial;">curry(<span
+                class="hljs-name">fn</span>)(<span class="hljs-number">1</span>)(<span
+                class="hljs-number">2</span>)(<span class="hljs-number">3</span>) //6</code></pre>
+        <div class="widget-codetool" style="display: none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="var fn = function(a,b,c) {
+    return a+b+c;
+}
+
+function curry(fn) {
+    var arr = [],
+    mySlice = arr.slice
+    fnLen = fn.length;
+
+    function curring() {
+        arr = arr.concat(mySlice.call(arguments));
+        if(arr.length < fnLen) {
+            return curring;
+        }
+        return fn.apply(this, arr);
+    }
+  return curring;
+}
+curry(fn)(1)(2)(3);//6" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-keyword">var</span> fn = <span class="hljs-function"><span
+                class="hljs-keyword">function</span>(<span class="hljs-params">a,b,c</span>) </span>{
+    <span class="hljs-keyword">return</span> a+b+c;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">curry</span>(<span
+        class="hljs-params">fn</span>) </span>{
+    <span class="hljs-keyword">var</span> arr = [],
+    mySlice = arr.slice
+    fnLen = fn.length;
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">curring</span>(<span
+            class="hljs-params"></span>) </span>{
+        arr = arr.concat(mySlice.call(<span class="hljs-built_in">arguments</span>));
+        <span class="hljs-keyword">if</span>(arr.length &lt; fnLen) {
+            <span class="hljs-keyword">return</span> curring;
+        }
+        <span class="hljs-keyword">return</span> fn.apply(<span class="hljs-keyword">this</span>, arr);
+    }
+  <span class="hljs-keyword">return</span> curring;
+}
+curry(fn)(<span class="hljs-number">1</span>)(<span class="hljs-number">2</span>)(<span
+                    class="hljs-number">3</span>);<span class="hljs-comment">//6</span></code></pre>
+        <p>本小题来自：<a href="https://zhuanlan.zhihu.com/p/25514220" rel="nofollow noreferrer" target="_blank">几个让我印象深刻的面试题(一)</a>
+        </p>
+        <h4>2. 提前返回</h4>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="var addEvent = function(el, type, fn, capture) {
+    if (window.addEventListener) {
+        el.addEventListener(type, function(e) {
+            fn.call(el, e);
+        }, capture);
+    } else if (window.attachEvent) {
+        el.attachEvent(&quot;on&quot; + type, function(e) {
+            fn.call(el, e);
+        });
+    }
+};" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs typescript"><code><span class="hljs-keyword">var</span> addEvent = <span class="hljs-function"><span
+                class="hljs-keyword">function</span>(<span class="hljs-params">el, <span
+                class="hljs-keyword">type</span>, fn, capture</span>) </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">window</span>.addEventListener) {
+        el.addEventListener(<span class="hljs-keyword">type</span>, <span class="hljs-function"><span
+                    class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+            fn.call(el, e);
+        }, capture);
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span
+                    class="hljs-built_in">window</span>.attachEvent) {
+        el.attachEvent(<span class="hljs-string">"on"</span> + <span class="hljs-keyword">type</span>, <span
+                    class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+            fn.call(el, e);
+        });
+    }
+};</code></pre>
+        <p>上面的方法有什么问题呢？很显然，我们每次使用addEvent为元素添加事件的时候，(eg. IE6/IE7)都会走一遍if...else if
+            ...，其实只要一次判定就可以了，怎么做？–柯里化。改为下面这样子的代码：</p>
+        <div class="widget-codetool" style="display: none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="var addEvent = (function(){
+    if (window.addEventListener) {
+        return function(el, sType, fn, capture) {
+            el.addEventListener(sType, function(e) {
+                fn.call(el, e);
+            }, (capture));
+        };
+    } else if (window.attachEvent) {
+        return function(el, sType, fn, capture) {
+            el.attachEvent(&quot;on&quot; + sType, function(e) {
+                fn.call(el, e);
+            });
+        };
+    }
+})();" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs lisp"><code>var addEvent = (<span class="hljs-name">function</span>(){
+    if (<span class="hljs-name">window</span>.addEventListener) {
+        return function(<span class="hljs-name">el</span>, sType, fn, capture) {
+            el.addEventListener(<span class="hljs-name">sType</span>, function(<span class="hljs-name">e</span>) {
+                fn.call(<span class="hljs-name">el</span>, e)<span class="hljs-comment">;</span>
+            }, (<span class="hljs-name">capture</span>))<span class="hljs-comment">;</span>
+        }<span class="hljs-comment">;</span>
+    } else if (<span class="hljs-name">window</span>.attachEvent) {
+        return function(<span class="hljs-name">el</span>, sType, fn, capture) {
+            el.attachEvent(<span class="hljs-string">"on"</span> + sType, function(<span class="hljs-name">e</span>) {
+                fn.call(<span class="hljs-name">el</span>, e)<span class="hljs-comment">;</span>
+            })<span class="hljs-comment">;</span>
+        }<span class="hljs-comment">;</span>
+    }
+})()<span class="hljs-comment">;</span></code></pre>
+        <p>初始addEvent的执行其实值实现了部分的应用（只有一次的if...else if...判定），而剩余的参数应用都是其返回函数实现的，典型的柯里化。</p>
+        <p><strong>对比：惰性加载</strong></p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="let addEvent = function(ele, type, fn) {
+    if (window.addEventListener) {
+        addEvent = function(ele, type, fn) {
+            ele.addEventListener(type, fn, false);
+        }
+    } else  if (window.attachEvent) {
+        addEvent = function(ele, type, fn) {
+            ele.attachEvent('on' + type, function() {
+                fn.call(ele)
+            });
+        }
+    }
+
+    addEvent(ele, type, fn);
+" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs typescript"><code><span class="hljs-keyword">let</span> addEvent = <span class="hljs-function"><span
+                class="hljs-keyword">function</span>(<span class="hljs-params">ele, <span
+                class="hljs-keyword">type</span>, fn</span>) </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">window</span>.addEventListener) {
+        addEvent = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ele, <span
+                    class="hljs-keyword">type</span>, fn</span>) </span>{
+            ele.addEventListener(<span class="hljs-keyword">type</span>, fn, <span class="hljs-literal">false</span>);
+        }
+    } <span class="hljs-keyword">else</span>  <span class="hljs-keyword">if</span> (<span
+                    class="hljs-built_in">window</span>.attachEvent) {
+        addEvent = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ele, <span
+                    class="hljs-keyword">type</span>, fn</span>) </span>{
+            ele.attachEvent(<span class="hljs-string">'on'</span> + <span class="hljs-keyword">type</span>, <span
+                    class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+                fn.call(ele)
+            });
+        }
+    }
+
+    addEvent(ele, <span class="hljs-keyword">type</span>, fn);
+</code></pre>
+        <h4>3. 延迟计算/运行</h4>
+        <p>ES5中的bind方法</p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="if (!Function.prototype.bind) {
+    Function.prototype.bind = function(context) {
+        var self = this,
+            args = Array.prototype.slice.call(arguments);
+
+        return function() {
+            return self.apply(context, args.slice(1));
+        }
+    };
+}" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-keyword">if</span> (!<span
+                class="hljs-built_in">Function</span>.prototype.bind) {
+    <span class="hljs-built_in">Function</span>.prototype.bind = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params">context</span>) </span>{
+        <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>,
+            args = <span class="hljs-built_in">Array</span>.prototype.slice.call(<span
+                    class="hljs-built_in">arguments</span>);
+
+        <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">return</span> self.apply(context, args.slice(<span class="hljs-number">1</span>));
+        }
+    };
+}</code></pre>
+        <p>推荐阅读：<a href="https://juejin.im/post/5b8350246fb9a019c372d26d" rel="nofollow noreferrer" target="_blank">从一道面试题认识函数柯里化</a>
+        </p>
+        <p>参考文章：<a href="https://juejin.im/post/5ad6b34a6fb9a028cc61bfb3#heading-4" rel="nofollow noreferrer"
+                   target="_blank">ES6版的柯里化函数</a>、<a href="http://www.zhangxinxu.com/wordpress/2013/02/js-currying/"
+                                                     rel="nofollow noreferrer" target="_blank">JS中的柯里化(currying)</a></p>
+        <h2 id="articleHeader4">5.手写一个 bind 方法</h2>
+        <p><strong>带一个参数：</strong></p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="Function.prototype.bind = function(context) {
+    let self = this,
+        slice = Array.prototype.slice,
+        args = slice.call(arguments);
+
+    return function() {
+        return self.apply(context, args.slice(1));
+    }
+};" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-built_in">Function</span>.prototype.bind = <span
+                class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                class="hljs-params">context</span>) </span>{
+    <span class="hljs-keyword">let</span> self = <span class="hljs-keyword">this</span>,
+        slice = <span class="hljs-built_in">Array</span>.prototype.slice,
+        args = slice.call(<span class="hljs-built_in">arguments</span>);
+
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span
+                    class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> self.apply(context, args.slice(<span class="hljs-number">1</span>));
+    }
+};</code></pre>
+        <p><strong>带多个参数：</strong></p>
+        <div class="widget-codetool" style="display: none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="//ES3实现
+if(!Function.prototype.bind){
+    Function.prototype.bind = function(o, args){
+
+        var self = this,
+            boundArgs = arguments;//注：arguments是指sum.bind(null,1)中的参数null和1
+
+        return function(){                 //此时返回的只是一个函数
+            var args = [], i;
+            for(var i=1; i< boundArgs.length; i++){
+                 args.push(boundArgs[i]);
+            }
+            for(var i =0; i< arguments.length; i++){
+                 args.push(arguments[i]);//注：这里的arguments是指result(2)中的参数2
+            }
+            return self.apply(o, args);
+        }
+
+    }
+
+}" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-comment">//ES3实现</span>
+<span class="hljs-keyword">if</span>(!<span class="hljs-built_in">Function</span>.prototype.bind){
+    <span class="hljs-built_in">Function</span>.prototype.bind = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params">o, args</span>)</span>{
+
+        <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>,
+            boundArgs = <span class="hljs-built_in">arguments</span>;<span class="hljs-comment">//注：arguments是指sum.bind(null,1)中的参数null和1</span>
+
+        <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>)</span>{                 <span class="hljs-comment">//此时返回的只是一个函数</span>
+            <span class="hljs-keyword">var</span> args = [], i;
+            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span
+                    class="hljs-number">1</span>; i&lt; boundArgs.length; i++){
+                 args.push(boundArgs[i]);
+            }
+            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i =<span
+                    class="hljs-number">0</span>; i&lt; <span class="hljs-built_in">arguments</span>.length; i++){
+                 args.push(<span class="hljs-built_in">arguments</span>[i]);<span class="hljs-comment">//注：这里的arguments是指result(2)中的参数2</span>
+            }
+            <span class="hljs-keyword">return</span> self.apply(o, args);
+        }
+
+    }
+
+}</code></pre>
+        <p><strong>或者</strong></p>
+        <div class="widget-codetool" style="display: none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="// 代码来自书籍 《javaScript 模式》
+if (typeof Function.prototype.bind === &quot;undefined&quot;){
+  Function.prototype.bind = function (thisArgs){
+    var fn = this,
+        slice = Array.prototype.slice,
+        args = slice.call(arguments, 1);
+    return function (){
+      return fn.apply(thisArgs, args.concat(slice.call(arguments)));
+    }
+  }
+}
+//注：前后arguments不是一回事哦~
+
+
+//调用
+var sum = function(x,y){ return x+y };
+var result = sum.bind(null,1);
+result(2);   // 3" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-comment">// 代码来自书籍 《javaScript 模式》</span>
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span
+                    class="hljs-built_in">Function</span>.prototype.bind === <span
+                    class="hljs-string">"undefined"</span>){
+  <span class="hljs-built_in">Function</span>.prototype.bind = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span
+                    class="hljs-params">thisArgs</span>)</span>{
+    <span class="hljs-keyword">var</span> fn = <span class="hljs-keyword">this</span>,
+        slice = <span class="hljs-built_in">Array</span>.prototype.slice,
+        args = slice.call(<span class="hljs-built_in">arguments</span>, <span class="hljs-number">1</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span
+                    class="hljs-keyword">function</span> (<span class="hljs-params"></span>)</span>{
+      <span class="hljs-keyword">return</span> fn.apply(thisArgs, args.concat(slice.call(<span class="hljs-built_in">arguments</span>)));
+    }
+  }
+}
+<span class="hljs-comment">//注：前后arguments不是一回事哦~</span>
+
+
+<span class="hljs-comment">//调用</span>
+<span class="hljs-keyword">var</span> sum = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params">x,y</span>)</span>{ <span class="hljs-keyword">return</span> x+y };
+<span class="hljs-keyword">var</span> result = sum.bind(<span class="hljs-literal">null</span>,<span
+                    class="hljs-number">1</span>);
+result(<span class="hljs-number">2</span>);   <span class="hljs-comment">// 3</span></code></pre>
+        <p><strong>或者</strong></p>
+        <div class="widget-codetool" style="display: none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="Function.prototype.bind = function(){
+    var fn = this;
+    var args = Array.prototye.slice.call(arguments);
+    var context = args.shift();
+
+    return function(){
+        return fn.apply(context, args.concat(Array.prototype.slice.call(arguments)));
+    };" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-built_in">Function</span>.prototype.bind = <span
+                class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">var</span> fn = <span class="hljs-keyword">this</span>;
+    <span class="hljs-keyword">var</span> args = <span class="hljs-built_in">Array</span>.prototye.slice.call(<span
+                    class="hljs-built_in">arguments</span>);
+    <span class="hljs-keyword">var</span> context = args.shift();
+
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span
+                    class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-keyword">return</span> fn.apply(context, args.concat(<span class="hljs-built_in">Array</span>.prototype.slice.call(<span
+                    class="hljs-built_in">arguments</span>)));
+    };</code></pre>
+        <p>本节参考文章：<a href="https://segmentfault.com/q/1010000005056387">js中的bind</a></p>
+        <p>其他文章:<a href="https://juejin.im/post/5ae2620a51882567336a7194" rel="nofollow noreferrer" target="_blank">JavaScirpt
+            的 bind 函数究竟做了哪些事</a></p>
+        <h2 id="articleHeader5">6.经典面试问题：new 的过程</h2>
+        <p>首先来看一下，函数声明的过程</p>
+        <div class="widget-codetool" style="display: none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="// 实际代码
+function fn1() {}
+
+// JavaScript 自动执行
+fn1.protptype = {
+    constructor: fn1,
+    __proto__: Object.prototype
+}
+
+fn1.__proto__ = Function.prototype" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-comment">// 实际代码</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn1</span>(<span
+        class="hljs-params"></span>) </span>{}
+
+<span class="hljs-comment">// JavaScript 自动执行</span>
+fn1.protptype = {
+    <span class="hljs-attr">constructor</span>: fn1,
+    <span class="hljs-attr">__proto__</span>: <span class="hljs-built_in">Object</span>.prototype
+}
+
+fn1.__proto__ = <span class="hljs-built_in">Function</span>.prototype</code></pre>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="var a = new myFunction(&quot;Li&quot;,&quot;Cherry&quot;);
+//伪代码
+new myFunction{
+    var obj = {};
+    obj.__proto__ = myFunction.prototype;
+    var result = myFunction.call(obj,&quot;Li&quot;,&quot;Cherry&quot;);
+    return typeof result === 'object'? result : obj;
+}" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs typescript"><code><span class="hljs-keyword">var</span> a = <span
+                class="hljs-keyword">new</span> myFunction(<span class="hljs-string">"Li"</span>,<span
+                class="hljs-string">"Cherry"</span>);
+<span class="hljs-comment">//伪代码</span>
+<span class="hljs-keyword">new</span> myFunction{
+    <span class="hljs-keyword">var</span> obj = {};
+    obj.__proto__ = myFunction.prototype;
+    <span class="hljs-keyword">var</span> result = myFunction.call(obj,<span class="hljs-string">"Li"</span>,<span
+                    class="hljs-string">"Cherry"</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">typeof</span> result === <span
+                    class="hljs-string">'object'</span>? result : obj;
+}</code></pre>
+        <ol>
+            <li>创建一个空对象 obj;</li>
+            <li>将新创建的空对象的隐式原型指向其构造函数的显示原型。</li>
+            <li>使用 call 改变 this 的指向</li>
+            <li>如果无返回值或者返回一个非对象值，则将 obj 返回作为新对象；如果返回值是一个新对象的话那么直接直接返回该对象。</li>
+        </ol>
+        <p>所以我们可以看到，在 new 的过程中，我们是使用 call 改变了 this 的指向。</p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="var NEW = function(func) {
+    var o = Object.create(func.prototype)
+    var k = func.call(o)
+    if (typeof k === 'object') {
+        return k
+    } else {
+        return o
+    }
+}" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-keyword">var</span> NEW = <span class="hljs-function"><span
+                class="hljs-keyword">function</span>(<span class="hljs-params">func</span>) </span>{
+    <span class="hljs-keyword">var</span> o = <span class="hljs-built_in">Object</span>.create(func.prototype)
+    <span class="hljs-keyword">var</span> k = func.call(o)
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> k === <span class="hljs-string">'object'</span>) {
+        <span class="hljs-keyword">return</span> k
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">return</span> o
+    }
+}</code></pre>
+        <h2 id="articleHeader6">7.javascript里面的继承怎么实现，如何避免原型链上面的对象共享</h2>
+        <p>什么是原型链</p>
+        <blockquote>当一个引用类型继承另一个引用类型的属性和方法时候就会产生一个原型连。</blockquote>
+        <p>ES5:寄生组合式继承:通过借用构造函数来继承属性和原型链来实现子继承父。</p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="    function ParentClass(name) {
+      this.name = name;
+    }
+    ParentClass.prototype.sayHello = function () {
+      console.log(&quot;I'm parent!&quot; + this.name);
+    }
+    function SubClass(name, age) {
+      //若是要多个参数可以用apply 结合 ...解构
+      ParentClass.call(this, name);
+      this.age = age;
+    }
+    SubClass.prototype.sayChildHello = function (name) {
+      console.log(&quot;I'm child &quot; + this.name)
+    }
+
+    SubClass.prototype = Object.create(ParentClass.prototype);
+    SubClass.prototype.constructor = SubClass;
+
+    let testA = new SubClass('CRPER')
+
+    // Object.create()的polyfill
+    /*
+    function pureObject(obj){
+        //定义了一个临时构造函数
+         function F() {}
+         //将这个临时构造函数的原型指向了传入进来的对象。
+         F.prototype = obj;
+         //返回这个构造函数的一个实例。该实例拥有obj的所有属性和方法。
+         //因为该实例的原型是obj对象。
+         return new F();
+    }
+    */
+
+    或
+
+    function subClass() {
+        superClass.apply(this, arguments);
+        this.abc = 1;
+    }
+
+    function inherits(subClass, superClass) {
+        function Inner() {}
+
+        Inner.prototype = superClass.prototype;
+        subClass.prototype = new Inner();
+        subClass.prototype.constructor = subClass;
+    }
+
+    inherits(subClass, superClass);
+
+    subClass.prototype.getTest = function() {
+        console.log(&quot;hello&quot;)
+    };" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code>    <span class="hljs-function"><span
+                class="hljs-keyword">function</span> <span class="hljs-title">ParentClass</span>(<span
+                class="hljs-params">name</span>) </span>{
+      <span class="hljs-keyword">this</span>.name = name;
+    }
+    ParentClass.prototype.sayHello = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span
+                    class="hljs-params"></span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"I'm parent!"</span> + <span
+                    class="hljs-keyword">this</span>.name);
+    }
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span
+            class="hljs-title">SubClass</span>(<span class="hljs-params">name, age</span>) </span>{
+      <span class="hljs-comment">//若是要多个参数可以用apply 结合 ...解构</span>
+      ParentClass.call(<span class="hljs-keyword">this</span>, name);
+      <span class="hljs-keyword">this</span>.age = age;
+    }
+    SubClass.prototype.sayChildHello = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span
+                    class="hljs-params">name</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"I'm child "</span> + <span
+                    class="hljs-keyword">this</span>.name)
+    }
+
+    SubClass.prototype = <span class="hljs-built_in">Object</span>.create(ParentClass.prototype);
+    SubClass.prototype.constructor = SubClass;
+
+    <span class="hljs-keyword">let</span> testA = <span class="hljs-keyword">new</span> SubClass(<span
+                    class="hljs-string">'CRPER'</span>)
+
+    <span class="hljs-comment">// Object.create()的polyfill</span>
+    <span class="hljs-comment">/*
+    function pureObject(obj){
+        //定义了一个临时构造函数
+         function F() {}
+         //将这个临时构造函数的原型指向了传入进来的对象。
+         F.prototype = obj;
+         //返回这个构造函数的一个实例。该实例拥有obj的所有属性和方法。
+         //因为该实例的原型是obj对象。
+         return new F();
+    }
+    */</span>
+
+    或
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span
+            class="hljs-title">subClass</span>(<span class="hljs-params"></span>) </span>{
+        superClass.apply(<span class="hljs-keyword">this</span>, <span class="hljs-built_in">arguments</span>);
+        <span class="hljs-keyword">this</span>.abc = <span class="hljs-number">1</span>;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span
+            class="hljs-title">inherits</span>(<span class="hljs-params">subClass, superClass</span>) </span>{
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span
+                class="hljs-title">Inner</span>(<span class="hljs-params"></span>) </span>{}
+
+        Inner.prototype = superClass.prototype;
+        subClass.prototype = <span class="hljs-keyword">new</span> Inner();
+        subClass.prototype.constructor = subClass;
+    }
+
+    inherits(subClass, superClass);
+
+    subClass.prototype.getTest = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"hello"</span>)
+    };</code></pre>
+        <p>ES6: 其实就是ES5的语法糖,不过可读性很强..</p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="    class ParentClass {
+      constructor(name) {
+        this.name = name;
+      }
+      sayHello() {
+        console.log(&quot;I'm parent!&quot; + this.name);
+      }
+    }
+
+    class SubClass extends ParentClass {
+      constructor(name) {
+        super(name);
+      }
+      sayChildHello() {
+        console.log(&quot;I'm child &quot; + this.name)
+      }
+      // 重新声明父类同名方法会覆写,ES5的话就是直接操作自己的原型链上
+      sayHello(){
+        console.log(&quot;override parent method !,I'm sayHello Method&quot;)
+      }
+    }
+
+    let testA = new SubClass('CRPER')" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs scala"><code>    <span class="hljs-class"><span class="hljs-keyword">class</span> <span
+                class="hljs-title">ParentClass</span> </span>{
+      constructor(name) {
+        <span class="hljs-keyword">this</span>.name = name;
+      }
+      sayHello() {
+        console.log(<span class="hljs-string">"I'm parent!"</span> + <span class="hljs-keyword">this</span>.name);
+      }
+    }
+
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SubClass</span> <span
+            class="hljs-keyword">extends</span> <span class="hljs-title">ParentClass</span> </span>{
+      constructor(name) {
+        <span class="hljs-keyword">super</span>(name);
+      }
+      sayChildHello() {
+        console.log(<span class="hljs-string">"I'm child "</span> + <span class="hljs-keyword">this</span>.name)
+      }
+      <span class="hljs-comment">// 重新声明父类同名方法会覆写,ES5的话就是直接操作自己的原型链上</span>
+      sayHello(){
+        console.log(<span class="hljs-string">"override parent method !,I'm sayHello Method"</span>)
+      }
+    }
+
+    let testA = <span class="hljs-keyword">new</span> <span class="hljs-type">SubClass</span>(<span class="hljs-symbol">'CRPE</span>R')</code></pre>
+        <h2 id="articleHeader7">8.继承 JS 内置对象（Date）</h2>
+        <p>写在前面，本节只记录了<a href="https://juejin.im/post/5a5c2193f265da3e377bfd83" rel="nofollow noreferrer"
+                         target="_blank">如何继承Date对象...</a>的解决方案，具体问题和解析过程请看原文</p>
+        <p><strong>ES5</strong></p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="// 需要考虑polyfill情况
+Object.setPrototypeOf = Object.setPrototypeOf ||
+function(obj, proto) {
+    obj.__proto__ = proto;
+
+    return obj;
+};
+
+/**
+ * 用了点技巧的继承，实际上返回的是Date对象
+ */
+function MyDate() {
+    // bind属于Function.prototype，接收的参数是：object, param1, params2...
+    var dateInst = new(Function.prototype.bind.apply(Date, [Date].concat(Array.prototype.slice.call(arguments))))();
+
+    // 更改原型指向，否则无法调用MyDate原型上的方法
+    // ES6方案中，这里就是[[prototype]]这个隐式原型对象，在没有标准以前就是__proto__
+    Object.setPrototypeOf(dateInst, MyDate.prototype);
+
+    dateInst.abc = 1;
+
+    return dateInst;
+}
+
+// 原型重新指回Date，否则根本无法算是继承
+Object.setPrototypeOf(MyDate.prototype, Date.prototype);
+
+MyDate.prototype.getTest = function getTest() {
+    return this.getTime();
+};
+
+let date = new MyDate();
+
+// 正常输出，譬如1515638988725
+console.log(date.getTest());" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-comment">// 需要考虑polyfill情况</span>
+<span class="hljs-built_in">Object</span>.setPrototypeOf = <span class="hljs-built_in">Object</span>.setPrototypeOf ||
+<span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+        class="hljs-params">obj, proto</span>) </span>{
+    obj.__proto__ = proto;
+
+    <span class="hljs-keyword">return</span> obj;
+};
+
+<span class="hljs-comment">/**
+ * 用了点技巧的继承，实际上返回的是Date对象
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyDate</span>(<span
+        class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// bind属于Function.prototype，接收的参数是：object, param1, params2...</span>
+    <span class="hljs-keyword">var</span> dateInst = <span class="hljs-keyword">new</span>(<span class="hljs-built_in">Function</span>.prototype.bind.apply(<span
+                    class="hljs-built_in">Date</span>, [<span class="hljs-built_in">Date</span>].concat(<span
+                    class="hljs-built_in">Array</span>.prototype.slice.call(<span class="hljs-built_in">arguments</span>))))();
+
+    <span class="hljs-comment">// 更改原型指向，否则无法调用MyDate原型上的方法</span>
+    <span class="hljs-comment">// ES6方案中，这里就是[[prototype]]这个隐式原型对象，在没有标准以前就是__proto__</span>
+    <span class="hljs-built_in">Object</span>.setPrototypeOf(dateInst, MyDate.prototype);
+
+    dateInst.abc = <span class="hljs-number">1</span>;
+
+    <span class="hljs-keyword">return</span> dateInst;
+}
+
+<span class="hljs-comment">// 原型重新指回Date，否则根本无法算是继承</span>
+<span class="hljs-built_in">Object</span>.setPrototypeOf(MyDate.prototype, <span class="hljs-built_in">Date</span>.prototype);
+
+MyDate.prototype.getTest = <span class="hljs-function"><span class="hljs-keyword">function</span> <span
+                    class="hljs-title">getTest</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.getTime();
+};
+
+<span class="hljs-keyword">let</span> date = <span class="hljs-keyword">new</span> MyDate();
+
+<span class="hljs-comment">// 正常输出，譬如1515638988725</span>
+<span class="hljs-built_in">console</span>.log(date.getTest());</code></pre>
+        <p><strong>ES6</strong></p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="class MyDate extends Date {
+    constructor() {
+        super();
+        this.abc = 1;
+    }
+    getTest() {
+        return this.getTime();
+    }
+}
+
+let date = new MyDate();
+
+// 正常输出，譬如1515638988725
+console.log(date.getTest());" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs scala"><code><span class="hljs-class"><span class="hljs-keyword">class</span> <span
+                class="hljs-title">MyDate</span> <span class="hljs-keyword">extends</span> <span
+                class="hljs-title">Date</span> </span>{
+    constructor() {
+        <span class="hljs-keyword">super</span>();
+        <span class="hljs-keyword">this</span>.abc = <span class="hljs-number">1</span>;
+    }
+    getTest() {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.getTime();
+    }
+}
+
+let date = <span class="hljs-keyword">new</span> <span class="hljs-type">MyDate</span>();
+
+<span class="hljs-comment">// 正常输出，譬如1515638988725</span>
+console.log(date.getTest());</code></pre>
+        <p>注意：这里的正常输出环境是直接用ES6运行，不经过babel打包，打包后实质上是转化成ES5的，所以效果完全不一样,会报错的</p>
+        <h2 id="articleHeader8">9.简易双向数据绑定</h2>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="<body>
+  <input type=&quot;text&quot; id=&quot;foo&quot;>
+  <p id=&quot;test&quot;></p>
+  <script>
+    var user = {}
+
+    Object.defineProperty(user, 'inputValue', {
+      configurable: true,
+      get: function() {
+        return document.getElementById('foo').value
+      },
+      set: function(value) {
+        document.getElementById('foo').value = value
+        document.getElementById('test').innerHTML = value
+      }
+    })
+
+    document.getElementById('foo').addEventListener('keyup', function() {
+      document.getElementById('test').innerHTML = user.inputValue
+    })
+  </script>
+</body>" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs xml"><code><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span
+          class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"foo"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span
+          class="hljs-string">"test"</span>&gt;</span><span class="hljs-tag">&lt;/<span
+                    class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">var</span> user = {}
+
+    <span class="hljs-built_in">Object</span>.defineProperty(user, <span class="hljs-string">'inputValue'</span>, {
+      <span class="hljs-attr">configurable</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">get</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">document</span>.getElementById(<span
+                    class="hljs-string">'foo'</span>).value
+      },
+      <span class="hljs-attr">set</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params">value</span>) </span>{
+        <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'foo'</span>).value = value
+        <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'test'</span>).innerHTML = value
+      }
+    })
+
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'foo'</span>).addEventListener(<span
+                    class="hljs-string">'keyup'</span>, <span class="hljs-function"><span
+                    class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'test'</span>).innerHTML = user.inputValue
+    })
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre>
+        <h2 id="articleHeader9">10.JavaScript实现发布-订阅模式</h2>
+        <p>发布-订阅模式又叫观察者模式，它定义对象间的一种一对多的依赖关系,当一个对象的状态发生改变时,所有依赖于它的对象都将得到通知。JavaScript开发中我们一般用事件模型来代替传统的发布-订阅模式</p>
+        <p><strong>示例1</strong></p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="    function Dep() {//发布者
+        this.subs = [];
+    }
+
+    Dep.prototype.addSub = function (sub) {
+        this.subs.push(sub);
+    }
+
+    Dep.prototype.notify = function () {
+        this.subs.forEach(sub=>sub.update());
+    }
+
+    function Watcher(fn) {//订阅者
+        this.fn = fn;
+    }
+
+    Watcher.prototype.update = function () {
+         this.fn();
+    }
+
+    var dep = new Dep();
+    dep.addSub(new Watcher(function () {
+        console.log('okokok');
+    }))
+    dep.notify();" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code>    <span class="hljs-function"><span
+                class="hljs-keyword">function</span> <span class="hljs-title">Dep</span>(<span
+                class="hljs-params"></span>) </span>{<span class="hljs-comment">//发布者</span>
+        <span class="hljs-keyword">this</span>.subs = [];
+    }
+
+    Dep.prototype.addSub = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span
+                    class="hljs-params">sub</span>) </span>{
+        <span class="hljs-keyword">this</span>.subs.push(sub);
+    }
+
+    Dep.prototype.notify = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span
+                    class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">this</span>.subs.forEach(<span class="hljs-function"><span
+                    class="hljs-params">sub</span>=&gt;</span>sub.update());
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Watcher</span>(<span
+            class="hljs-params">fn</span>) </span>{<span class="hljs-comment">//订阅者</span>
+        <span class="hljs-keyword">this</span>.fn = fn;
+    }
+
+    Watcher.prototype.update = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span
+                    class="hljs-params"></span>) </span>{
+         <span class="hljs-keyword">this</span>.fn();
+    }
+
+    <span class="hljs-keyword">var</span> dep = <span class="hljs-keyword">new</span> Dep();
+    dep.addSub(<span class="hljs-keyword">new</span> Watcher(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span
+                    class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'okokok'</span>);
+    }))
+    dep.notify();</code></pre>
+        <p>推荐阅读：<a href="https://juejin.im/post/5a9108b6f265da4e7527b1a4" rel="nofollow noreferrer" target="_blank">Javascript设计模式之发布-订阅模式</a>
+        </p>
+        <p><strong>示例2</strong></p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="function Event(){
+    this.list={},
+    this.on=function(key,cb){//订阅事件
+        if(!this.list[key]){
+            this.list[key] = []
+        }
+        this.list[key].push(cb)
+    },
+    this.emit = function(){//触发事件
+        var key = Array.prototype.shift.call(arguments)
+        var e = this.list[key]
+        if(!e){
+            return
+        }
+        var args = Array.prototype.slice.call(arguments)
+        for(var i = 0;i<e.length;i++){
+            e[i].apply(null,args)
+        }
+    }
+}" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span
+                class="hljs-title">Event</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">this</span>.list={},
+    <span class="hljs-keyword">this</span>.on=<span class="hljs-function"><span
+                    class="hljs-keyword">function</span>(<span class="hljs-params">key,cb</span>)</span>{<span
+                    class="hljs-comment">//订阅事件</span>
+        <span class="hljs-keyword">if</span>(!<span class="hljs-keyword">this</span>.list[key]){
+            <span class="hljs-keyword">this</span>.list[key] = []
+        }
+        <span class="hljs-keyword">this</span>.list[key].push(cb)
+    },
+    <span class="hljs-keyword">this</span>.emit = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>)</span>{<span class="hljs-comment">//触发事件</span>
+        <span class="hljs-keyword">var</span> key = <span class="hljs-built_in">Array</span>.prototype.shift.call(<span
+                    class="hljs-built_in">arguments</span>)
+        <span class="hljs-keyword">var</span> e = <span class="hljs-keyword">this</span>.list[key]
+        <span class="hljs-keyword">if</span>(!e){
+            <span class="hljs-keyword">return</span>
+        }
+        <span class="hljs-keyword">var</span> args = <span class="hljs-built_in">Array</span>.prototype.slice.call(<span
+                    class="hljs-built_in">arguments</span>)
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span
+                    class="hljs-number">0</span>;i&lt;e.length;i++){
+            e[i].apply(<span class="hljs-literal">null</span>,args)
+        }
+    }
+}</code></pre>
+        <p>尝试一下：</p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="var a = new Event()
+a.on('a',function(x){console.log(x)})
+a.emit('a',1)//1" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-keyword">var</span> a = <span
+                class="hljs-keyword">new</span> Event()
+a.on(<span class="hljs-string">'a'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params">x</span>)</span>{<span class="hljs-built_in">console</span>.log(x)})
+a.emit(<span class="hljs-string">'a'</span>,<span class="hljs-number">1</span>)<span
+                    class="hljs-comment">//1</span></code></pre>
+        <p>推荐阅读：<a href="https://juejin.im/post/5ad1dfdc6fb9a028ba1fe9b2" rel="nofollow noreferrer" target="_blank">从单向到双向数据绑定</a>
+        </p>
+        <p><strong>示例3</strong></p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="var myBus = (function() {
+    var clienlist = {},
+        addlisten, trigger, remove;
+    /**
+     * 增加订阅者
+     * @key {String} 类型
+     * @fn {Function} 回掉函数
+     * */
+    addlisten = function(key, fn) {
+        if(!clienlist[key]) {
+            clienlist[key] = [];
+        }
+        clienlist[key].push(fn);
+    };
+    /**
+     * 发布消息
+     * */
+    trigger = function() {
+        var key = [].shift.call(arguments), //取出消息类型
+            fns = clienlist[key]; //取出该类型的对应的消息集合
+        if(!fns || fns.length === 0) {
+            return false;
+        }
+        for(var i = 0, fn; fn = fns[i++];) {
+            fn.apply(this, arguments);
+        }
+    };
+    /**
+     * 删除订阅
+     * @key {String} 类型
+     * @fn {Function} 回掉函数
+     * */
+    remove = function(key, fn) {
+        var fns = clienlist[key]; //取出该类型的对应的消息集合
+        if(!fns) { //如果对应的key没有订阅直接返回
+            return false;
+        }
+        if(!fn) { //如果没有传入具体的回掉，则表示需要取消所有订阅
+            fns &amp;&amp; (fns.length = 0);
+        } else {
+            for(var l = fns.length - 1; l >= 0; l--) { //遍历回掉函数列表
+                if(fn === fns[l]) {
+                    fns.splice(l, 1); //删除订阅者的回掉
+                }
+            }
+        }
+    };
+    return {
+        $on: addlisten,
+        $emit: trigger,
+        $off: remove
+    }
+})();" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs php"><code><span class="hljs-keyword">var</span> myBus = (<span class="hljs-function"><span
+                class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">var</span> clienlist = {},
+        addlisten, trigger, remove;
+    <span class="hljs-comment">/**
+     * 增加订阅者
+     * <span class="hljs-doctag">@key</span> {String} 类型
+     * <span class="hljs-doctag">@fn</span> {Function} 回掉函数
+     * */</span>
+    addlisten = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(key, fn)</span> </span>{
+        <span class="hljs-keyword">if</span>(!clienlist[key]) {
+            clienlist[key] = [];
+        }
+        clienlist[key].push(fn);
+    };
+    <span class="hljs-comment">/**
+     * 发布消息
+     * */</span>
+    trigger = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">var</span> key = [].shift.call(arguments), <span class="hljs-comment">//取出消息类型</span>
+            fns = clienlist[key]; <span class="hljs-comment">//取出该类型的对应的消息集合</span>
+        <span class="hljs-keyword">if</span>(!fns || fns.length === <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+        }
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span
+                    class="hljs-number">0</span>, fn; fn = fns[i++];) {
+            fn.apply(this, arguments);
+        }
+    };
+    <span class="hljs-comment">/**
+     * 删除订阅
+     * <span class="hljs-doctag">@key</span> {String} 类型
+     * <span class="hljs-doctag">@fn</span> {Function} 回掉函数
+     * */</span>
+    remove = <span class="hljs-function"><span class="hljs-keyword">function</span><span
+                    class="hljs-params">(key, fn)</span> </span>{
+        <span class="hljs-keyword">var</span> fns = clienlist[key]; <span class="hljs-comment">//取出该类型的对应的消息集合</span>
+        <span class="hljs-keyword">if</span>(!fns) { <span class="hljs-comment">//如果对应的key没有订阅直接返回</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+        }
+        <span class="hljs-keyword">if</span>(!fn) { <span class="hljs-comment">//如果没有传入具体的回掉，则表示需要取消所有订阅</span>
+            fns &amp;&amp; (fns.length = <span class="hljs-number">0</span>);
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> l = fns.length - <span
+                    class="hljs-number">1</span>; l &gt;= <span class="hljs-number">0</span>; l--) { <span
+                    class="hljs-comment">//遍历回掉函数列表</span>
+                <span class="hljs-keyword">if</span>(fn === fns[l]) {
+                    fns.splice(l, <span class="hljs-number">1</span>); <span class="hljs-comment">//删除订阅者的回掉</span>
+                }
+            }
+        }
+    };
+    <span class="hljs-keyword">return</span> {
+        $on: addlisten,
+        $emit: trigger,
+        $off: remove
+    }
+})();</code></pre>
+        <p>推荐阅读：<a href="https://juejin.im/post/5ad213c05188255c637b64bf" rel="nofollow noreferrer" target="_blank">写一个简单vue
+            中间件，$emit、$on</a></p>
+        <p><strong>示例4</strong><br>这个示例更像<strong>示例2</strong>、<strong>示例3</strong>的总结，我也放这里吧，多看几种写法也多少开阔一下思路或全当复习</p>
+        <p>卖烧饼的店主可以把小明、小龙的电话记录下来,等店里有烧饼了在通知小龙小明来拿这就是所谓的发布-订阅模式，代码如下：</p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="/*烧饼店*/
+var Sesamecakeshop={
+    clienlist:[],//缓存列表
+    addlisten:function(fn){//增加订阅者
+        this.clienlist.push(fn);
+    },
+    trigger:function(){//发布消息
+        for(var i=0,fn;fn=this.clienlist[i++];){
+            fn.apply(this,arguments);
+        }
+    }
+}
+
+/*小明发布订阅*/
+Sesamecakeshop.addlisten(function(price,taste){
+    console.log(&quot;小明发布的&quot;+price+&quot;元，&quot;+taste+&quot;味道的&quot;);
+});
+/*小龙发布订阅*/
+Sesamecakeshop.addlisten(function(price,taste){
+    console.log(&quot;小龙发布的&quot;+price+&quot;元，&quot;+taste+&quot;味道的&quot;);
+});
+
+Sesamecakeshop.trigger(10,&quot;椒盐&quot;);" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-comment">/*烧饼店*/</span>
+<span class="hljs-keyword">var</span> Sesamecakeshop={
+    <span class="hljs-attr">clienlist</span>:[],<span class="hljs-comment">//缓存列表</span>
+    addlisten:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">fn</span>)</span>{<span
+                    class="hljs-comment">//增加订阅者</span>
+        <span class="hljs-keyword">this</span>.clienlist.push(fn);
+    },
+    <span class="hljs-attr">trigger</span>:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>)</span>{<span class="hljs-comment">//发布消息</span>
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>,fn;fn=<span
+                    class="hljs-keyword">this</span>.clienlist[i++];){
+            fn.apply(<span class="hljs-keyword">this</span>,<span class="hljs-built_in">arguments</span>);
+        }
+    }
+}
+
+<span class="hljs-comment">/*小明发布订阅*/</span>
+Sesamecakeshop.addlisten(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params">price,taste</span>)</span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"小明发布的"</span>+price+<span
+                    class="hljs-string">"元，"</span>+taste+<span class="hljs-string">"味道的"</span>);
+});
+<span class="hljs-comment">/*小龙发布订阅*/</span>
+Sesamecakeshop.addlisten(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params">price,taste</span>)</span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"小龙发布的"</span>+price+<span
+                    class="hljs-string">"元，"</span>+taste+<span class="hljs-string">"味道的"</span>);
+});
+
+Sesamecakeshop.trigger(<span class="hljs-number">10</span>,<span class="hljs-string">"椒盐"</span>);</code></pre>
+        <p>
+            从代码中可以看出，只有小明，小龙预定了烧饼，烧饼店就可以发布消息告诉小龙与小明。但是有个问题不知道大家发现了没有。小明只喜欢椒盐味道的。而小龙只喜欢焦糖味道的。上面的代码就满足不了客户的需求，给客户一种感觉就是，不管我喜欢不喜欢，你都会发给我。如果发布比较多，客户就会感到厌烦，甚至会想删除订阅。下边是对代码进行改良大家可以看看。</p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="/*烧饼店*/
+var Sesamecakeshop={
+    clienlist:{},/*缓存列表*/
+    /**
+     * 增加订阅者
+     * @key {String} 类型
+     * @fn {Function} 回掉函数
+     * */
+    addlisten:function(key,fn){
+        if(!this.clienlist[key]){
+            this.clienlist[key]=[];
+        }
+        this.clienlist[key].push(fn);
+    },
+    /**
+     * 发布消息
+     * */
+    trigger:function(){
+        var key=[].shift.call(arguments),//取出消息类型
+            fns=this.clienlist[key];//取出该类型的对应的消息集合
+        if(!fns || fns.length===0){
+            return false;
+        }
+        for(var i=0,fn;fn=fns[i++];){
+            fn.apply(this,arguments);
+        }
+    },
+    /**
+     * 删除订阅
+     * @key {String} 类型
+     * @fn {Function} 回掉函数
+     * */
+    remove:function(key,fn){
+        var fns=this.clienlist[key];//取出该类型的对应的消息集合
+        if(!fns){//如果对应的key没有订阅直接返回
+            return false;
+        }
+        if(!fn){//如果没有传入具体的回掉，则表示需要取消所有订阅
+            fns &amp;&amp; (fns.length=0);
+        }else{
+            for(var l=fns.length-1;l>=0;l--){//遍历回掉函数列表
+                if(fn===fns[l]){
+                    fns.splice(l,1);//删除订阅者的回掉
+                }
+            }
+        }
+    }
+}
+
+/*小明发布订阅*/
+Sesamecakeshop.addlisten(&quot;焦糖&quot;,fn1=function(price,taste){
+    console.log(&quot;小明发布的&quot;+price+&quot;元，&quot;+taste+&quot;味道的&quot;);
+});
+/*小龙发布订阅*/
+Sesamecakeshop.addlisten(&quot;椒盐&quot;,function(price,taste){
+    console.log(&quot;小龙发布的&quot;+price+&quot;元，&quot;+taste+&quot;味道的&quot;);
+});
+
+Sesamecakeshop.trigger(&quot;椒盐&quot;,10,&quot;椒盐&quot;);
+
+Sesamecakeshop.remove(&quot;焦糖&quot;,fn1);//注意这里是按照地址引用的。如果传入匿名函数则删除不了
+
+Sesamecakeshop.trigger(&quot;焦糖&quot;,40,&quot;焦糖&quot;);" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-comment">/*烧饼店*/</span>
+<span class="hljs-keyword">var</span> Sesamecakeshop={
+    <span class="hljs-attr">clienlist</span>:{},<span class="hljs-comment">/*缓存列表*/</span>
+    <span class="hljs-comment">/**
+     * 增加订阅者
+     * @key {String} 类型
+     * @fn {Function} 回掉函数
+     * */</span>
+    addlisten:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params">key,fn</span>)</span>{
+        <span class="hljs-keyword">if</span>(!<span class="hljs-keyword">this</span>.clienlist[key]){
+            <span class="hljs-keyword">this</span>.clienlist[key]=[];
+        }
+        <span class="hljs-keyword">this</span>.clienlist[key].push(fn);
+    },
+    <span class="hljs-comment">/**
+     * 发布消息
+     * */</span>
+    trigger:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>)</span>{
+        <span class="hljs-keyword">var</span> key=[].shift.call(<span class="hljs-built_in">arguments</span>),<span
+                    class="hljs-comment">//取出消息类型</span>
+            fns=<span class="hljs-keyword">this</span>.clienlist[key];<span class="hljs-comment">//取出该类型的对应的消息集合</span>
+        <span class="hljs-keyword">if</span>(!fns || fns.length===<span class="hljs-number">0</span>){
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+        }
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>,fn;fn=fns[i++];){
+            fn.apply(<span class="hljs-keyword">this</span>,<span class="hljs-built_in">arguments</span>);
+        }
+    },
+    <span class="hljs-comment">/**
+     * 删除订阅
+     * @key {String} 类型
+     * @fn {Function} 回掉函数
+     * */</span>
+    remove:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params">key,fn</span>)</span>{
+        <span class="hljs-keyword">var</span> fns=<span class="hljs-keyword">this</span>.clienlist[key];<span
+                    class="hljs-comment">//取出该类型的对应的消息集合</span>
+        <span class="hljs-keyword">if</span>(!fns){<span class="hljs-comment">//如果对应的key没有订阅直接返回</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+        }
+        <span class="hljs-keyword">if</span>(!fn){<span class="hljs-comment">//如果没有传入具体的回掉，则表示需要取消所有订阅</span>
+            fns &amp;&amp; (fns.length=<span class="hljs-number">0</span>);
+        }<span class="hljs-keyword">else</span>{
+            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> l=fns.length<span
+                    class="hljs-number">-1</span>;l&gt;=<span class="hljs-number">0</span>;l--){<span
+                    class="hljs-comment">//遍历回掉函数列表</span>
+                <span class="hljs-keyword">if</span>(fn===fns[l]){
+                    fns.splice(l,<span class="hljs-number">1</span>);<span class="hljs-comment">//删除订阅者的回掉</span>
+                }
+            }
+        }
+    }
+}
+
+<span class="hljs-comment">/*小明发布订阅*/</span>
+Sesamecakeshop.addlisten(<span class="hljs-string">"焦糖"</span>,fn1=<span class="hljs-function"><span
+                    class="hljs-keyword">function</span>(<span class="hljs-params">price,taste</span>)</span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"小明发布的"</span>+price+<span
+                    class="hljs-string">"元，"</span>+taste+<span class="hljs-string">"味道的"</span>);
+});
+<span class="hljs-comment">/*小龙发布订阅*/</span>
+Sesamecakeshop.addlisten(<span class="hljs-string">"椒盐"</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params">price,taste</span>)</span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"小龙发布的"</span>+price+<span
+                    class="hljs-string">"元，"</span>+taste+<span class="hljs-string">"味道的"</span>);
+});
+
+Sesamecakeshop.trigger(<span class="hljs-string">"椒盐"</span>,<span class="hljs-number">10</span>,<span
+                    class="hljs-string">"椒盐"</span>);
+
+Sesamecakeshop.remove(<span class="hljs-string">"焦糖"</span>,fn1);<span
+                    class="hljs-comment">//注意这里是按照地址引用的。如果传入匿名函数则删除不了        </span>
+
+Sesamecakeshop.trigger(<span class="hljs-string">"焦糖"</span>,<span class="hljs-number">40</span>,<span
+                    class="hljs-string">"焦糖"</span>);</code></pre>
+        <p>推荐必读：<a href="https://juejin.im/post/59bf4ff9f265da064b46e508" rel="nofollow noreferrer" target="_blank">发布-订阅模式</a>
+        </p>
+        <h2 id="articleHeader10">11.扁平化后的数组</h2>
+        <p>如：[1, [2, [ [3, 4], 5], 6]] =&gt; [1, 2, 3, 4, 5, 6]</p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="    var data =  [1, [2, [ [3, 4], 5], 6]];
+
+    function flat(data, result) {
+        var i, d, len;
+        for (i = 0, len = data.length; i < len; ++i) {
+            d = data[i];
+            if (typeof d === 'number') {
+                result.push(d);
+            } else {
+                flat(d, result);
+            }
+        }
+    }
+
+    var result = [];
+    flat(data, result);
+
+    console.log(result);" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs kotlin"><code>    <span class="hljs-keyword">var</span> <span class="hljs-keyword">data</span> =  [<span
+                class="hljs-number">1</span>, [<span class="hljs-number">2</span>, [ [<span class="hljs-number">3</span>, <span
+                class="hljs-number">4</span>], <span class="hljs-number">5</span>], <span class="hljs-number">6</span>]];
+
+    function flat(<span class="hljs-keyword">data</span>, result) {
+        <span class="hljs-keyword">var</span> i, d, len;
+        <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>, len = <span class="hljs-keyword">data</span>.length; i &lt; len; ++i) {
+            d = <span class="hljs-keyword">data</span>[i];
+            <span class="hljs-keyword">if</span> (typeof d === <span class="hljs-string">'number'</span>) {
+                result.push(d);
+            } <span class="hljs-keyword">else</span> {
+                flat(d, result);
+            }
+        }
+    }
+
+    <span class="hljs-keyword">var</span> result = [];
+    flat(<span class="hljs-keyword">data</span>, result);
+
+    console.log(result);</code></pre>
+        <h2 id="articleHeader11">12.冒泡排序</h2>
+        <blockquote>解析:</blockquote>
+        <ol>
+            <li>比较相邻的两个元素，如果前一个比后一个大，则交换位置。</li>
+            <li>第一轮的时候最后一个元素应该是最大的一个。</li>
+            <li>按照步骤一的方法进行相邻两个元素的比较，这个时候由于最后一个元素已经是最大的了，所以最后一个元素不用比较。</li>
+        </ol>
+        <p>js代码实现</p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="function bubble_sort(arr){
+  for(var i = 0;i < arr.length - 1; i++){
+    for(var j = 0;j < arr.length - i - 1;j++){
+      if(arr[j] > arr[j+1]){
+        [arr[j], arr[j+1]] = [arr[j + 1], arr[j]]
+      }
+    }
+  }
+}
+
+var arr = [3,1,5,7,2,4,9,6,10,8];
+bubble_sort(arr);
+console.log(arr);" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span
+                class="hljs-title">bubble_sort</span>(<span class="hljs-params">arr</span>)</span>{
+  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>;i &lt; arr.length - <span
+                    class="hljs-number">1</span>; i++){
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> j = <span class="hljs-number">0</span>;j &lt; arr.length - i - <span
+                    class="hljs-number">1</span>;j++){
+      <span class="hljs-keyword">if</span>(arr[j] &gt; arr[j+<span class="hljs-number">1</span>]){
+        [arr[j], arr[j+<span class="hljs-number">1</span>]] = [arr[j + <span class="hljs-number">1</span>], arr[j]]
+      }
+    }
+  }
+}
+
+<span class="hljs-keyword">var</span> arr = [<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span
+                    class="hljs-number">5</span>,<span class="hljs-number">7</span>,<span
+                    class="hljs-number">2</span>,<span class="hljs-number">4</span>,<span
+                    class="hljs-number">9</span>,<span class="hljs-number">6</span>,<span class="hljs-number">10</span>,<span
+                    class="hljs-number">8</span>];
+bubble_sort(arr);
+<span class="hljs-built_in">console</span>.log(arr);</code></pre>
+        <h2 id="articleHeader12">13.快速排序</h2>
+        <p>快速排序是对冒泡排序的一种改进</p>
+        <blockquote>解析：</blockquote>
+        <ol>
+            <li>第一趟排序时将数据分成两部分，一部分比另一部分的所有数据都要小。</li>
+            <li>然后递归调用，在两边都实行快速排序。</li>
+        </ol>
+        <p>js代码实现</p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="function quick_sort(arr){
+  if(arr.length <= 1){
+    return arr;
+  }
+  var pivotIndex = Math.floor(arr.length / 2);
+  var pivot = arr.splice(pivotIndex, 1)[0];
+
+  var left = [];
+  var right = [];
+  for (var i = 0;i < arr.length; i++) {
+    if(arr[i] < pivot){
+      left.push(arr[i]);
+    } else {
+      right.push(arr[i]);
+    }
+  }
+
+  return quick_sort(left).concat([pivot],quick_sort(right));
+}
+
+var arr=[5,6,2,1,3,8,7,1,2,3,4,7];
+console.log(quick_sort(arr));" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs swift"><code>function quick_sort(arr){
+  <span class="hljs-keyword">if</span>(arr.length &lt;= <span class="hljs-number">1</span>){
+    <span class="hljs-keyword">return</span> arr;
+  }
+  <span class="hljs-keyword">var</span> pivotIndex = <span class="hljs-type">Math</span>.floor(arr.length / <span
+                    class="hljs-number">2</span>);
+  <span class="hljs-keyword">var</span> pivot = arr.splice(pivotIndex, <span class="hljs-number">1</span>)[<span
+                    class="hljs-number">0</span>];
+
+  <span class="hljs-keyword">var</span> <span class="hljs-keyword">left</span> = [];
+  <span class="hljs-keyword">var</span> <span class="hljs-keyword">right</span> = [];
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>;i &lt; arr.length; i++) {
+    <span class="hljs-keyword">if</span>(arr[i] &lt; pivot){
+      <span class="hljs-keyword">left</span>.push(arr[i]);
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">right</span>.push(arr[i]);
+    }
+  }
+
+  <span class="hljs-keyword">return</span> quick_sort(<span class="hljs-keyword">left</span>).concat([pivot],quick_sort(<span
+                    class="hljs-keyword">right</span>));
+}
+
+<span class="hljs-keyword">var</span> arr=[<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span
+                    class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span
+                    class="hljs-number">3</span>,<span class="hljs-number">8</span>,<span
+                    class="hljs-number">7</span>,<span class="hljs-number">1</span>,<span
+                    class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span
+                    class="hljs-number">4</span>,<span class="hljs-number">7</span>];
+console.log(quick_sort(arr));</code></pre>
+        <h2 id="articleHeader13">14.选择排序</h2>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="// 选择排序：大概思路是找到最小的放在第一位，找到第二小的放在第二位，以此类推 算法复杂度O(n^2)
+选择demo:
+function selectionSort(arr) {
+    let len = arr.length;
+    let minIndex;
+    for (let i = 0; i < len - 1; i++) {
+        minIndex = i;
+        for (let j = i + 1; j < len; j++) {
+            if (arr[j] < arr[minIndex]) {     //寻找最小的数
+                minIndex = j;                 //将最小数的索引保存
+            }
+        }
+        [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
+    }
+return arr;
+}" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-comment">// 选择排序：大概思路是找到最小的放在第一位，找到第二小的放在第二位，以此类推 算法复杂度O(n^2)</span>
+选择demo:
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span
+        class="hljs-title">selectionSort</span>(<span class="hljs-params">arr</span>) </span>{
+    <span class="hljs-keyword">let</span> len = arr.length;
+    <span class="hljs-keyword">let</span> minIndex;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; len - <span
+                    class="hljs-number">1</span>; i++) {
+        minIndex = i;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = i + <span
+                    class="hljs-number">1</span>; j &lt; len; j++) {
+            <span class="hljs-keyword">if</span> (arr[j] &lt; arr[minIndex]) {     <span
+                    class="hljs-comment">//寻找最小的数</span>
+                minIndex = j;                 <span class="hljs-comment">//将最小数的索引保存</span>
+            }
+        }
+        [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
+    }
+<span class="hljs-keyword">return</span> arr;
+}</code></pre>
+        <p>本节参考文章：<a href="https://juejin.im/post/5b94d8965188255c5a0cdc02" rel="nofollow noreferrer" target="_blank">2018前端面试总结...</a>
+        </p>
+        <h2 id="articleHeader14">15.插入排序</h2>
+        <blockquote>解析：</blockquote>
+        <ol>
+            <li>从第一个元素开始，该元素可以认为已经被排序</li>
+            <li>取出下一个元素，在已经排序的元素序列中从后向前扫描</li>
+            <li>如果该元素（已排序）大于新元素，将该元素移到下一位置</li>
+            <li>重复步骤3，直到找到已排序的元素小于或者等于新元素的位置</li>
+            <li>将新元素插入到下一位置中</li>
+            <li>重复步骤2</li>
+        </ol>
+        <p>js代码实现</p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="function insert_sort(arr){
+  var i=1,
+  j,key,len=arr.length;
+  for(;i<len;i++){
+    var j=i;
+    var key=arr[j];
+    while(--j>-1){
+      if(arr[j]>key){
+        arr[j+1]=arr[j];
+      }else{
+        break;
+      }
+    }
+
+    arr[j+1]=key;
+  }
+
+  return arr;
+}
+
+或
+
+function insert_sort(arr) {
+    let len = arr.length;
+    let preIndex, current;
+    for (let i = 1; i < len; i++) {
+        preIndex = i - 1;
+        current = arr[i];
+        while (preIndex >= 0 &amp;&amp; arr[preIndex] > current) {
+            arr[preIndex + 1] = arr[preIndex];
+            preIndex--;
+        }
+        arr[preIndex + 1] = current;
+    }
+    return arr;
+}
+
+insert_sort([2,34,54,2,5,1,7]);" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs lua"><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span
+                class="hljs-title">insert_sort</span><span class="hljs-params">(arr)</span></span>{
+  var i=<span class="hljs-number">1</span>,
+  j,key,<span class="hljs-built_in">len</span>=arr.length;
+  <span class="hljs-keyword">for</span>(;i&lt;<span class="hljs-built_in">len</span>;i++){
+    var j=i;
+    var key=arr[j];
+    <span class="hljs-keyword">while</span>(<span class="hljs-comment">--j&gt;-1){</span>
+      <span class="hljs-keyword">if</span>(arr[j]&gt;key){
+        arr[j+<span class="hljs-number">1</span>]=arr[j];
+      }<span class="hljs-keyword">else</span>{
+        <span class="hljs-keyword">break</span>;
+      }
+    }
+
+    arr[j+<span class="hljs-number">1</span>]=key;
+  }
+
+  <span class="hljs-keyword">return</span> arr;
+}
+
+或
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">insert_sort</span><span
+        class="hljs-params">(arr)</span></span> {
+    let <span class="hljs-built_in">len</span> = arr.length;
+    let preIndex, current;
+    <span class="hljs-keyword">for</span> (let i = <span class="hljs-number">1</span>; i &lt; <span
+                    class="hljs-built_in">len</span>; i++) {
+        preIndex = i - <span class="hljs-number">1</span>;
+        current = arr[i];
+        <span class="hljs-keyword">while</span> (preIndex &gt;= <span class="hljs-number">0</span> &amp;&amp; arr[preIndex] &gt; current) {
+            arr[preIndex + <span class="hljs-number">1</span>] = arr[preIndex];
+            preIndex<span class="hljs-comment">--;</span>
+        }
+        arr[preIndex + <span class="hljs-number">1</span>] = current;
+    }
+    <span class="hljs-keyword">return</span> arr;
+}
+
+insert_sort([<span class="hljs-number">2</span>,<span class="hljs-number">34</span>,<span class="hljs-number">54</span>,<span
+                    class="hljs-number">2</span>,<span class="hljs-number">5</span>,<span
+                    class="hljs-number">1</span>,<span class="hljs-number">7</span>]);</code></pre>
+
+    </div>
+
+
+    <!--====================================================================================-->
 </div>
 
 <!--_footer 作为公共模版分离出去-->
-<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="lib/layer/2.4/layer.js"></script>
-<script type="text/javascript" src="static/h-ui/js/H-ui.min.js"></script> 
+<script type="text/javascript" src="static/h-ui/js/H-ui.min.js"></script>
 <script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
 <script type="text/javascript" src="lib/zTree/v3/js/jquery.ztree.all-3.5.min.js"></script>
-<script type="text/javascript" src="lib/My97DatePicker/4.8/WdatePicker.js"></script> 
-<script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script> 
+<script type="text/javascript" src="lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
 
 </body>

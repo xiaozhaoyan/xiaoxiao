@@ -21,12 +21,42 @@
 <![endif]-->
 <title>首页</title>
 </head>
-<body>
-<div class="page-container">
-	<p class="f-20 text-success">小咸<span class="f-14">v3.1</span>开发笔记</p>
-	<p>登录次数：18 </p>
-	<p>上次登录IP：222.35.131.79.1  上次登录时间：2014-6-14 11:19:55</p>
+<style>
+	.tsimg{
 
+		width: 100%;
+		height: 44rem;
+		margin: auto;
+		text-align: center;
+	}
+	.container a{
+		color: #0600f9;
+	}
+	.container p{
+		color: #000;
+	}
+</style>
+<body onload="init()">
+<script>
+	function init() {
+		//调用changeImg方法.1000毫秒(也就是一秒) 调用一次
+		setInterval("changeImg()",2000)
+    }
+    var i=1;
+	function changeImg(){
+	    i++;
+	    //主要是通过改变src的值来达到改变图片的目的
+		document.getElementById("lunbotu").src="img/"+i+".png";
+		if (i==6){
+		    i=0;
+		}
+	}
+</script>
+<div class="page-container">
+	<p class="f-20 text-success" style="color: #f38787;">小咸<span class="f-14">v3.1</span>开发笔记</p>
+	<div class="tsimg">
+			<img id="lunbotu" src="img/1.png"width="100%" height="100%">
+	</div>
 </div>
 <footer class="footer mt-20">
 	<div class="container">

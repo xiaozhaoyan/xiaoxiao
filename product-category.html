@@ -1,35 +1,2273 @@
 ﻿<!DOCTYPE HTML>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="renderer" content="webkit|ie-comp|ie-stand">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-<!--[if lt IE 9]>
-<script type="text/javascript" src="lib/html5shiv.js"></script>
-<script type="text/javascript" src="lib/respond.min.js"></script>
-<![endif]-->
-<link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
-<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css" />
-<link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.8/iconfont.css" />
-<link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css" id="skin" />
-<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css" />
-<link rel="stylesheet" href="lib/zTree/v3/css/zTreeStyle/zTreeStyle.css" type="text/css">
-<!--[if IE 6]>
-<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
-<script>DD_belatedPNG.fix('*');</script>
-<![endif]-->
-<title>HTML2</title>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="lib/html5shiv.js"></script>
+    <script type="text/javascript" src="lib/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.8/iconfont.css"/>
+    <link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css" id="skin"/>
+    <link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css"/>
+    <!--[if IE 6]>
+    <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js"></script>
+    <script>DD_belatedPNG.fix('*');</script>
+    <![endif]-->
+    <title>基本功二</title>
+    <link rel="stylesheet" href="lib/zTree/v3/css/zTreeStyle/zTreeStyle.css" type="text/css">
+</head>
+<body class="pos-r">
+<div class="pos-a"
+     style="width:2rem;left:0;top:0; bottom:0; height:100%; border-right:1px solid #e5e5e5; background-color:#f5f5f5; overflow:auto;">
+    <ul id="treeDemo" class="ztree"></ul>
+</div>
+<div style="margin-left:2rem;">
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 基本工二 <span
+            class="c-gray en">&gt;</span> 基本功二 <a class="btn btn-success radius r"
+                                                  style="line-height:1.6em;margin-top:3px"
+                                                  href="javascript:location.replace(location.href);" title="刷新"><i
+            class="Hui-iconfont">&#xe68f;</i></a></nav>
+    <!--====================================================================================-->
+    <div class="article fmt article__content" data-id="1190000017875258" data-license="cc">
+        <h2 id="articleHeader0">1.ajax</h2>
+        <div class="widget-codetool" style="display: none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="var xhr = new XMLHttpRequest(); // 声明一个请求对象
+
+// 前端设置是否带cookie
+xhr.withCredentials = true;
+
+xhr.open('GET', 'xxxx');
+//xhr.open('post', 'http://www.domain2.com:8080/login', true);
+
+// 如何设置请求头? xhr.setRequestHeader(header, value);
+xhr.setRequestHeader('Content-Type', 'application/json');
+
+xhr.onreadystatechange = function(){
+    if(xhr.readyState === 4){  // readyState 4 代表已向服务器发送请求
+        if(xhr.status === 200){ // status 200 代表服务器返回成功
+            console.log(xhr.responseText); // 这是返回的文本
+        } else{
+            console.log(&quot;Error: &quot;+ xhr.status); // 连接失败的时候抛出错误
+        }
+    }
+}
+
+xhr.send(null);
+//xhr.send('user=admin');
+// get方法 send null(亦或者不传,则直接是传递 header) ,post 的 send 则是传递值" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-keyword">var</span> xhr = <span
+                class="hljs-keyword">new</span> XMLHttpRequest(); <span class="hljs-comment">// 声明一个请求对象</span>
+
+<span class="hljs-comment">// 前端设置是否带cookie</span>
+xhr.withCredentials = <span class="hljs-literal">true</span>;
+
+xhr.open(<span class="hljs-string">'GET'</span>, <span class="hljs-string">'xxxx'</span>);
+<span class="hljs-comment">//xhr.open('post', 'http://www.domain2.com:8080/login', true);</span>
+
+<span class="hljs-comment">// 如何设置请求头? xhr.setRequestHeader(header, value);</span>
+xhr.setRequestHeader(<span class="hljs-string">'Content-Type'</span>, <span
+                    class="hljs-string">'application/json'</span>);
+
+xhr.onreadystatechange = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">if</span>(xhr.readyState === <span class="hljs-number">4</span>){  <span
+                    class="hljs-comment">// readyState 4 代表已向服务器发送请求</span>
+        <span class="hljs-keyword">if</span>(xhr.status === <span class="hljs-number">200</span>){ <span
+                    class="hljs-comment">// status 200 代表服务器返回成功</span>
+            <span class="hljs-built_in">console</span>.log(xhr.responseText); <span
+                    class="hljs-comment">// 这是返回的文本</span>
+        } <span class="hljs-keyword">else</span>{
+            <span class="hljs-built_in">console</span>.log(<span
+                    class="hljs-string">"Error: "</span>+ xhr.status); <span class="hljs-comment">// 连接失败的时候抛出错误</span>
+        }
+    }
+}
+
+xhr.send(<span class="hljs-literal">null</span>);
+<span class="hljs-comment">//xhr.send('user=admin');</span>
+<span class="hljs-comment">// get方法 send null(亦或者不传,则直接是传递 header) ,post 的 send 则是传递值</span></code></pre>
+        <h2 id="articleHeader1">2.jsonp</h2>
+        <h3 id="articleHeader2">1.）原生实现：</h3>
+        <div class="widget-codetool" style="display: none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text=" <script>
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+
+    // 传参并指定回调执行函数为onBack
+    script.src = 'http://www.domain2.com:8080/login?user=admin&amp;callback=onBack';
+    document.head.appendChild(script);
+
+    // 回调执行函数
+    function onBack(res) {
+        alert(JSON.stringify(res));
+    }
+ </script>" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs xml"><code> <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span
+                class="javascript">
+    <span class="hljs-keyword">var</span> script = <span class="hljs-built_in">document</span>.createElement(<span
+                class="hljs-string">'script'</span>);
+    script.type = <span class="hljs-string">'text/javascript'</span>;
+
+    <span class="hljs-comment">// 传参并指定回调执行函数为onBack</span>
+    script.src = <span class="hljs-string">'http://www.domain2.com:8080/login?user=admin&amp;callback=onBack'</span>;
+    <span class="hljs-built_in">document</span>.head.appendChild(script);
+
+    <span class="hljs-comment">// 回调执行函数</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onBack</span>(<span
+            class="hljs-params">res</span>) </span>{
+        alert(<span class="hljs-built_in">JSON</span>.stringify(res));
+    }
+ </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+        <p>服务端返回如下（返回时即执行全局函数）：</p>
+        <div class="widget-codetool" style="display: none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="onBack({&quot;status&quot;: true, &quot;user&quot;: &quot;admin&quot;})"
+                      title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs objectivec"><code style="word-break: break-word; white-space: initial;">onBack({<span
+                class="hljs-string">"status"</span>: <span class="hljs-literal">true</span>, <span class="hljs-string">"user"</span>: <span
+                class="hljs-string">"admin"</span>})</code></pre>
+        <h3 id="articleHeader3">2.）jquery ajax：</h3>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="$.ajax({
+    url: 'http://www.domain2.com:8080/login',
+    type: 'get',
+    dataType: 'jsonp',  // 请求方式为jsonp
+    jsonpCallback: &quot;onBack&quot;,    // 自定义回调函数名
+    data: {}
+});" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs scala"><code>$.ajax({
+    url: <span class="hljs-symbol">'http</span>:<span class="hljs-comment">//www.domain2.com:8080/login',</span>
+    <span class="hljs-class"><span class="hljs-keyword">type</span></span>: <span class="hljs-symbol">'ge</span>t',
+    dataType: <span class="hljs-symbol">'json</span>p',  <span class="hljs-comment">// 请求方式为jsonp</span>
+    jsonpCallback: <span class="hljs-string">"onBack"</span>,    <span class="hljs-comment">// 自定义回调函数名</span>
+    data: {}
+});</code></pre>
+        <h3 id="articleHeader4">3.）vue.js：</h3>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="this.$http.jsonp('http://www.domain2.com:8080/login', {
+    params: {},
+    jsonp: 'onBack'
+}).then((res) => {
+    console.log(res);
+})" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs coffeescript"><code><span class="hljs-keyword">this</span>.$http.jsonp(<span
+                class="hljs-string">'http://www.domain2.com:8080/login'</span>, {
+    params: {},
+    jsonp: <span class="hljs-string">'onBack'</span>
+}).<span class="hljs-keyword">then</span>(<span class="hljs-function"><span
+                    class="hljs-params">(res)</span> =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(res);
+})</code></pre>
+        <h3 id="articleHeader5">4.）npm包jsonp：</h3>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="npm install jsonp --save" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs sql"><code style="word-break: break-word; white-space: initial;">npm <span
+                class="hljs-keyword">install</span> jsonp <span class="hljs-comment">--save</span></code></pre>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="import originJSONP from 'jsonp'   //引入jsonp
+
+//进行封装并export
+export default function jsonp(url,data,option) {
+    url += (url.indexOf('?')<0? '?' : '&amp;')+param(data)
+
+    return new Promise((resolve,reject)=>{
+        originJSONP(url,option,(err,data)=>{
+            if(!err){
+                resolve(data)
+            }else{
+                reject(err)
+            }
+        })
+    })
+}
+
+//对data进行处理，并encodeURIComponent()进行转码。
+function param(data) {
+    let url = ''
+    for(var k in data) {
+          let value = data[k] !== undefined? data[k] : ''
+          url += '&amp;' + k + '=' + encodeURIComponent(value)
+    }
+    return url ? url.substring(1) : ''
+}" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs typescript"><code><span class="hljs-keyword">import</span> originJSONP <span
+                class="hljs-keyword">from</span> <span class="hljs-string">'jsonp'</span>   <span class="hljs-comment">//引入jsonp</span>
+
+<span class="hljs-comment">//进行封装并export</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span
+                    class="hljs-keyword">function</span> <span class="hljs-title">jsonp</span>(<span
+                    class="hljs-params">url,data,option</span>) </span>{
+    url += (url.indexOf(<span class="hljs-string">'?'</span>)&lt;<span class="hljs-number">0</span>? <span
+                    class="hljs-string">'?'</span> : <span class="hljs-string">'&amp;'</span>)+param(data)
+
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span
+                    class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve,reject</span>)=&gt;</span>{
+        originJSONP(url,option,<span class="hljs-function">(<span class="hljs-params">err,data</span>)=&gt;</span>{
+            <span class="hljs-keyword">if</span>(!err){
+                resolve(data)
+            }<span class="hljs-keyword">else</span>{
+                reject(err)
+            }
+        })
+    })
+}
+
+<span class="hljs-comment">//对data进行处理，并encodeURIComponent()进行转码。</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">param</span>(<span
+        class="hljs-params">data</span>) </span>{
+    <span class="hljs-keyword">let</span> url = <span class="hljs-string">''</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> k <span class="hljs-keyword">in</span> data) {
+          <span class="hljs-keyword">let</span> value = data[k] !== <span class="hljs-literal">undefined</span>? data[k] : <span
+                    class="hljs-string">''</span>
+          url += <span class="hljs-string">'&amp;'</span> + k + <span class="hljs-string">'='</span> + <span
+                    class="hljs-built_in">encodeURIComponent</span>(value)
+    }
+    <span class="hljs-keyword">return</span> url ? url.substring(<span class="hljs-number">1</span>) : <span
+                    class="hljs-string">''</span>
+}</code></pre>
+        <p>本节参考文章： <a href="https://juejin.im/post/5b0d255e518825157914fbcd" rel="nofollow noreferrer" target="_blank">vue项目中jsonp跨域获取qq音乐首页推荐</a>
+        </p>
+        <h2 id="articleHeader6">3.实现一个简单的Promise</h2>
+        <p>Promise对象调用</p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="let p =new Promise(function(resolve, reject){
+    if(/* 异步操作成功 */){
+        resolve(data)
+    }else{
+        reject(err)
+    }
+})" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-keyword">let</span> p =<span
+                class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span
+                class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>)</span>{
+    <span class="hljs-keyword">if</span>(<span class="hljs-comment">/* 异步操作成功 */</span>){
+        resolve(data)
+    }<span class="hljs-keyword">else</span>{
+        reject(err)
+    }
+})</code></pre>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="p.then((res)=>{
+  console.log(res)
+},(err)=>{
+  console.log(err)
+})" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs coffeescript"><code>p.<span class="hljs-keyword">then</span>(<span class="hljs-function"><span
+                class="hljs-params">(res)</span>=&gt;</span>{
+  <span class="hljs-built_in">console</span>.log(res)
+},<span class="hljs-function"><span class="hljs-params">(err)</span>=&gt;</span>{
+  <span class="hljs-built_in">console</span>.log(err)
+})</code></pre>
+        <p>实现一个简单的Promise</p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="function Promise(fn){
+  var status = 'pending'
+  function successNotify(){
+      status = 'fulfilled'//状态变为fulfilled
+      toDoThen.apply(undefined, arguments)//执行回调
+  }
+  function failNotify(){
+      status = 'rejected'//状态变为rejected
+      toDoThen.apply(undefined, arguments)//执行回调
+  }
+  function toDoThen(){
+      setTimeout(()=>{ // 保证回调是异步执行的
+          if(status === 'fulfilled'){
+              for(let i =0; i< successArray.length;i ++)    {
+                  successArray[i].apply(undefined, arguments)//执行then里面的回掉函数
+              }
+          }else if(status === 'rejected'){
+              for(let i =0; i< failArray.length;i ++)    {
+                  failArray[i].apply(undefined, arguments)//执行then里面的回掉函数
+              }
+          }
+      })
+  }
+  var successArray = []
+  var failArray = []
+  fn.call(undefined, successNotify, failNotify)
+  return {
+      then: function(successFn, failFn){
+          successArray.push(successFn)
+          failArray.push(failFn)
+          return undefined // 此处应该返回一个Promise
+      }
+  }
+}" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span
+                class="hljs-title">Promise</span>(<span class="hljs-params">fn</span>)</span>{
+  <span class="hljs-keyword">var</span> status = <span class="hljs-string">'pending'</span>
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span
+          class="hljs-title">successNotify</span>(<span class="hljs-params"></span>)</span>{
+      status = <span class="hljs-string">'fulfilled'</span><span class="hljs-comment">//状态变为fulfilled</span>
+      toDoThen.apply(<span class="hljs-literal">undefined</span>, <span class="hljs-built_in">arguments</span>)<span
+                    class="hljs-comment">//执行回调</span>
+  }
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span
+          class="hljs-title">failNotify</span>(<span class="hljs-params"></span>)</span>{
+      status = <span class="hljs-string">'rejected'</span><span class="hljs-comment">//状态变为rejected</span>
+      toDoThen.apply(<span class="hljs-literal">undefined</span>, <span class="hljs-built_in">arguments</span>)<span
+                    class="hljs-comment">//执行回调</span>
+  }
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toDoThen</span>(<span
+          class="hljs-params"></span>)</span>{
+      setTimeout(<span class="hljs-function"><span class="hljs-params">()</span>=&gt;</span>{ <span
+                    class="hljs-comment">// 保证回调是异步执行的</span>
+          <span class="hljs-keyword">if</span>(status === <span class="hljs-string">'fulfilled'</span>){
+              <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i =<span
+                    class="hljs-number">0</span>; i&lt; successArray.length;i ++)    {
+                  successArray[i].apply(<span class="hljs-literal">undefined</span>, <span class="hljs-built_in">arguments</span>)<span
+                    class="hljs-comment">//执行then里面的回掉函数</span>
+              }
+          }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(status === <span
+                    class="hljs-string">'rejected'</span>){
+              <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i =<span
+                    class="hljs-number">0</span>; i&lt; failArray.length;i ++)    {
+                  failArray[i].apply(<span class="hljs-literal">undefined</span>, <span
+                    class="hljs-built_in">arguments</span>)<span class="hljs-comment">//执行then里面的回掉函数</span>
+              }
+          }
+      })
+  }
+  <span class="hljs-keyword">var</span> successArray = []
+  <span class="hljs-keyword">var</span> failArray = []
+  fn.call(<span class="hljs-literal">undefined</span>, successNotify, failNotify)
+  <span class="hljs-keyword">return</span> {
+      <span class="hljs-attr">then</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params">successFn, failFn</span>)</span>{
+          successArray.push(successFn)
+          failArray.push(failFn)
+          <span class="hljs-keyword">return</span> <span class="hljs-literal">undefined</span> <span
+                    class="hljs-comment">// 此处应该返回一个Promise</span>
+      }
+  }
+}</code></pre>
+        <p>
+            解题思路：Promise中的resolve和reject用于改变Promise的状态和传参，then中的参数必须是作为回调执行的函数。因此，当Promise改变状态之后会调用回调函数，根据状态的不同选择需要执行的回调函数。</p>
+        <p>本节参考文章：<a href="http://www.cnblogs.com/lunlunshiwo/p/8852984.html" rel="nofollow noreferrer" target="_blank">面向面试题和实际使用谈promise</a>
+        </p>
+        <p><strong>示例2</strong></p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="const PENDING = &quot;pending&quot;; //等待
+const FULFILLED = &quot;fulfilled&quot;; //已完成
+const REJECTED = &quot;rejected&quot;; // 已拒绝
+
+function Promise(executor) {
+    let self = this;
+    self.status = PENDING;
+
+    self.value;
+    self.reason;
+
+
+    function resolve(value) {
+        if (self.status === PENDING) {
+            self.status = FULFILLED;
+            self.value = value;
+        }
+    }
+
+    function reject(reason) {
+        if (self.status === PENDING) {
+            self.status = REJECTED;
+            self.reason = reason;
+        }
+    }
+    try { // 规范提到，执行器抛异常会reject
+        executor(resolve, reject);
+    } catch(e) {
+        reject(e)
+    }
+}
+// then方法实现
+Promise.prototype.then = function (onFulfilled, onRjected) {
+    let self = this;
+    /**
+     * onFulfilled 和 onRejected 都是可选参数。
+     * 如果 onFulfilled 不是函数，其必须被忽略
+     * 如果 onRejected 不是函数，其必须被忽略
+     */
+    onFulfilled = typeof onFulfilled === 'function' ? onFulfilled : function(value) {
+        return value;
+    };
+    onRjected = typeof onRjected === 'function' ? onRjected : function(reason) {
+        throw reason;
+    }
+
+    if (self.status === FULFILLED) {
+        onFulfilled(self.value);
+    }
+    if (self.status === REJECTED) {
+        onRjected(self.reason);
+    }
+}" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs php"><code><span class="hljs-keyword">const</span> PENDING = <span class="hljs-string">"pending"</span>; <span
+                class="hljs-comment">//等待</span>
+<span class="hljs-keyword">const</span> FULFILLED = <span class="hljs-string">"fulfilled"</span>; <span
+                    class="hljs-comment">//已完成</span>
+<span class="hljs-keyword">const</span> REJECTED = <span class="hljs-string">"rejected"</span>; <span
+                    class="hljs-comment">// 已拒绝</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Promise</span><span
+        class="hljs-params">(executor)</span> </span>{
+    let <span class="hljs-keyword">self</span> = this;
+    <span class="hljs-keyword">self</span>.status = PENDING;
+
+    <span class="hljs-keyword">self</span>.value;
+    <span class="hljs-keyword">self</span>.reason;
+
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">resolve</span><span
+            class="hljs-params">(value)</span> </span>{
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span>.status === PENDING) {
+            <span class="hljs-keyword">self</span>.status = FULFILLED;
+            <span class="hljs-keyword">self</span>.value = value;
+        }
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">reject</span><span
+            class="hljs-params">(reason)</span> </span>{
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span>.status === PENDING) {
+            <span class="hljs-keyword">self</span>.status = REJECTED;
+            <span class="hljs-keyword">self</span>.reason = reason;
+        }
+    }
+    <span class="hljs-keyword">try</span> { <span class="hljs-comment">// 规范提到，执行器抛异常会reject</span>
+        executor(resolve, reject);
+    } <span class="hljs-keyword">catch</span>(e) {
+        reject(e)
+    }
+}
+<span class="hljs-comment">// then方法实现</span>
+Promise.prototype.then = <span class="hljs-function"><span class="hljs-keyword">function</span> <span
+                    class="hljs-params">(onFulfilled, onRjected)</span> </span>{
+    let <span class="hljs-keyword">self</span> = this;
+    <span class="hljs-comment">/**
+     * onFulfilled 和 onRejected 都是可选参数。
+     * 如果 onFulfilled 不是函数，其必须被忽略
+     * 如果 onRejected 不是函数，其必须被忽略
+     */</span>
+    onFulfilled = typeof onFulfilled === <span class="hljs-string">'function'</span> ? onFulfilled : <span
+                    class="hljs-function"><span class="hljs-keyword">function</span><span
+                    class="hljs-params">(value)</span> </span>{
+        <span class="hljs-keyword">return</span> value;
+    };
+    onRjected = typeof onRjected === <span class="hljs-string">'function'</span> ? onRjected : <span
+                    class="hljs-function"><span class="hljs-keyword">function</span><span
+                    class="hljs-params">(reason)</span> </span>{
+        <span class="hljs-keyword">throw</span> reason;
+    }
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span>.status === FULFILLED) {
+        onFulfilled(<span class="hljs-keyword">self</span>.value);
+    }
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span>.status === REJECTED) {
+        onRjected(<span class="hljs-keyword">self</span>.reason);
+    }
+}</code></pre>
+        <p>本节参考文章：<a href="https://juejin.im/post/5aa730276fb9a028b77a7903" rel="nofollow noreferrer" target="_blank">Javascript
+            Promise学习过程总结</a></p>
+        <h2 id="articleHeader7">4.闭包</h2>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="var fn = function() {
+    var divs = document.querySelectorAll('div');
+    for (var i = 0; i < 3; i++) {
+        divs[i].onclick = (function(i) {
+            return function() {
+                    alert(i);
+            };
+        })(i);
+    }
+};
+fn();" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-keyword">var</span> fn = <span class="hljs-function"><span
+                class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> divs = <span class="hljs-built_in">document</span>.querySelectorAll(<span
+                    class="hljs-string">'div'</span>);
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span
+                    class="hljs-number">3</span>; i++) {
+        divs[i].onclick = (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params">i</span>) </span>{
+            <span class="hljs-keyword">return</span> <span class="hljs-function"><span
+                    class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+                    alert(i);
+            };
+        })(i);
+    }
+};
+fn();</code></pre>
+        <p>或者如下的写法：</p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="var fn = function() {
+    var divs = document.querySelectorAll('div');
+    for (var i = 0; i < 3; i++) {
+        (function(i) {
+            divs[i].onclick = function() {
+                    alert(i);
+            };
+        })(i);
+    }
+};
+fn();" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-keyword">var</span> fn = <span class="hljs-function"><span
+                class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> divs = <span class="hljs-built_in">document</span>.querySelectorAll(<span
+                    class="hljs-string">'div'</span>);
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span
+                    class="hljs-number">3</span>; i++) {
+        (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params">i</span>) </span>{
+            divs[i].onclick = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>) </span>{
+                    alert(i);
+            };
+        })(i);
+    }
+};
+fn();</code></pre>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="for (var i = 0; i < 3; i++) {
+    setTimeout((function(i) {
+        return function() {
+            console.log(i);
+        };
+    })(i), 0);
+    console.log(i);
+}" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs lisp"><code>for (<span class="hljs-name">var</span> i = <span class="hljs-number">0</span><span
+                class="hljs-comment">; i &lt; 3; i++) {</span>
+    setTimeout((<span class="hljs-name">function</span>(<span class="hljs-name">i</span>) {
+        return function() {
+            console.log(<span class="hljs-name">i</span>)<span class="hljs-comment">;</span>
+        }<span class="hljs-comment">;</span>
+    })(<span class="hljs-name">i</span>), <span class="hljs-number">0</span>)<span class="hljs-comment">;</span>
+    console.log(<span class="hljs-name">i</span>)<span class="hljs-comment">;</span>
+}</code></pre>
+        <h2 id="articleHeader8">5.事件代理</h2>
+        <blockquote>事件代理（Event Delegation），又称之为事件委托。是 JavaScript
+            中常用绑定事件的常用技巧。“事件代理”即是把原本需要绑定的事件委托给父元素，让父元素担当事件监听的职务。<strong>事件代理的原理是DOM元素的事件冒泡</strong>。
+        </blockquote>
+        <ul>
+            <li>减少事件注册,节省内存占用,提高性能</li>
+            <li>可以实现当新增子对象时无需再次对其绑定</li>
+        </ul>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="  <div class=&quot;wrap&quot; id=&quot;wrap&quot;>
+    <div class=&quot;btn&quot; data-type=&quot;btn&quot; data-feat=&quot;add&quot;>添加</div>
+    <div class=&quot;btn&quot; data-type=&quot;btn&quot; data-feat=&quot;delete&quot;>绘画</div>
+    <div class=&quot;btn&quot; data-type=&quot;btn&quot; data-feat=&quot;delete&quot;>散步</div>
+    <div class=&quot;btn&quot; data-type=&quot;btn&quot; data-feat=&quot;delete&quot;>静坐</div>
+  </div>
+  <script type=&quot;text/javascript&quot;>
+    var n = 0
+    document.getElementById('wrap').addEventListener('click', function(e) {
+      var target = e.target;
+      var type = target.dataset.type;
+      var feat = target.dataset.feat;
+
+      if (type == 'btn') {
+        switch (feat) {
+          case 'add':
+            this.innerHTML += `<div class=&quot;btn&quot; data-type=&quot;btn&quot; data-feat=&quot;delete&quot;>静坐${n}</div>`
+            n++
+            return;
+          case 'delete':
+            target.parentNode.removeChild(target);
+            return;
+        }
+      }
+
+    }, false);
+</script>    " title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs scala"><code>  &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span
+                class="hljs-string">"wrap"</span> id=<span class="hljs-string">"wrap"</span>&gt;
+    &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span
+                    class="hljs-string">"btn"</span> data-<span class="hljs-class"><span
+                    class="hljs-keyword">type</span></span>=<span class="hljs-string">"btn"</span> data-feat=<span
+                    class="hljs-string">"add"</span>&gt;添加&lt;/div&gt;
+    &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span
+                    class="hljs-string">"btn"</span> data-<span class="hljs-class"><span
+                    class="hljs-keyword">type</span></span>=<span class="hljs-string">"btn"</span> data-feat=<span
+                    class="hljs-string">"delete"</span>&gt;绘画&lt;/div&gt;
+    &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span
+                    class="hljs-string">"btn"</span> data-<span class="hljs-class"><span
+                    class="hljs-keyword">type</span></span>=<span class="hljs-string">"btn"</span> data-feat=<span
+                    class="hljs-string">"delete"</span>&gt;散步&lt;/div&gt;
+    &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span
+                    class="hljs-string">"btn"</span> data-<span class="hljs-class"><span
+                    class="hljs-keyword">type</span></span>=<span class="hljs-string">"btn"</span> data-feat=<span
+                    class="hljs-string">"delete"</span>&gt;静坐&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script <span class="hljs-class"><span class="hljs-keyword">type</span></span>=<span class="hljs-string">"text/javascript"</span>&gt;
+    <span class="hljs-keyword">var</span> n = <span class="hljs-number">0</span>
+    document.getElementById(<span class="hljs-symbol">'wra</span>p').addEventListener(<span
+                    class="hljs-symbol">'clic</span>k', function(e) {
+      <span class="hljs-keyword">var</span> target = e.target;
+      <span class="hljs-keyword">var</span> <span class="hljs-class"><span class="hljs-keyword">type</span> </span>= target.dataset.<span
+                    class="hljs-keyword">type</span>;
+      <span class="hljs-keyword">var</span> feat = target.dataset.feat;
+
+      <span class="hljs-keyword">if</span> (<span class="hljs-class"><span class="hljs-keyword">type</span> <span
+                    class="hljs-title">==</span> '<span class="hljs-title">btn</span>') </span>{
+        switch (feat) {
+          <span class="hljs-keyword">case</span> <span class="hljs-symbol">'ad</span>d':
+            <span class="hljs-keyword">this</span>.innerHTML += `&lt;div <span class="hljs-class"><span
+                    class="hljs-keyword">class</span></span>=<span class="hljs-string">"btn"</span> data-<span
+                    class="hljs-class"><span class="hljs-keyword">type</span></span>=<span
+                    class="hljs-string">"btn"</span> data-feat=<span class="hljs-string">"delete"</span>&gt;静坐${n}&lt;/div&gt;`
+            n++
+            <span class="hljs-keyword">return</span>;
+          <span class="hljs-keyword">case</span> <span class="hljs-symbol">'delet</span>e':
+            target.parentNode.removeChild(target);
+            <span class="hljs-keyword">return</span>;
+        }
+      }
+
+    }, <span class="hljs-literal">false</span>);
+&lt;/script&gt;    </code></pre>
+        <h2 id="articleHeader9">6.封装dom查询（面向对象）</h2>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="function Elem(id){
+  this.elem = document.getElementById(id)
+}
+
+ Elem.prototype.html = function(val){
+   var elem = this.elem
+   if(val) {
+     elem.innerHTML = val
+     return this  //链式
+   } else {
+     return elem.innerHTML
+   }
+ }
+
+ Elem.prototype.on = function(type,fn){
+   var elem = this.elem
+   elem.addEventListener(type, fn)
+   return this  //链式
+ }
+
+//调用
+var div = new Elem('id')
+div.html('<p>hello</p>').on('click',function(){
+  console.log('suceess')
+})" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span
+                class="hljs-title">Elem</span>(<span class="hljs-params">id</span>)</span>{
+  <span class="hljs-keyword">this</span>.elem = <span class="hljs-built_in">document</span>.getElementById(id)
+}
+
+ Elem.prototype.html = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">val</span>)</span>{
+   <span class="hljs-keyword">var</span> elem = <span class="hljs-keyword">this</span>.elem
+   <span class="hljs-keyword">if</span>(val) {
+     elem.innerHTML = val
+     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>  <span
+                    class="hljs-comment">//链式</span>
+   } <span class="hljs-keyword">else</span> {
+     <span class="hljs-keyword">return</span> elem.innerHTML
+   }
+ }
+
+ Elem.prototype.on = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">type,fn</span>)</span>{
+   <span class="hljs-keyword">var</span> elem = <span class="hljs-keyword">this</span>.elem
+   elem.addEventListener(type, fn)
+   <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>  <span
+                    class="hljs-comment">//链式</span>
+ }
+
+<span class="hljs-comment">//调用</span>
+<span class="hljs-keyword">var</span> div = <span class="hljs-keyword">new</span> Elem(<span
+                    class="hljs-string">'id'</span>)
+div.html(<span class="hljs-string">'&lt;p&gt;hello&lt;/p&gt;'</span>).on(<span class="hljs-string">'click'</span>,<span
+                    class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'suceess'</span>)
+})</code></pre>
+        <h2 id="articleHeader10">7.DOM劫持</h2>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text=" function nodeToFragment (node) {
+      var flag = document.createDocumentFragment();
+      var child;
+      // 首先，所有表达式必然会返回一个值，赋值表达式亦不例外
+      // 理解了上面这一点，就能理解 while (child = node.firstChild) 这种用法
+      // 其次，appendChild 调用以后 child 会从原来 DOM 中移除
+      // 所以，第二次循环时，node.firstChild 已经不再是之前的第一个子元素了
+      while (child = node.firstChild) {
+        flag.appendChild(child); // 将子节点劫持到文档片段中
+      }
+      return flag
+    }" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code> <span class="hljs-function"><span class="hljs-keyword">function</span> <span
+                class="hljs-title">nodeToFragment</span> (<span class="hljs-params">node</span>) </span>{
+      <span class="hljs-keyword">var</span> flag = <span class="hljs-built_in">document</span>.createDocumentFragment();
+      <span class="hljs-keyword">var</span> child;
+      <span class="hljs-comment">// 首先，所有表达式必然会返回一个值，赋值表达式亦不例外</span>
+      <span class="hljs-comment">// 理解了上面这一点，就能理解 while (child = node.firstChild) 这种用法</span>
+      <span class="hljs-comment">// 其次，appendChild 调用以后 child 会从原来 DOM 中移除</span>
+      <span class="hljs-comment">// 所以，第二次循环时，node.firstChild 已经不再是之前的第一个子元素了</span>
+      <span class="hljs-keyword">while</span> (child = node.firstChild) {
+        flag.appendChild(child); <span class="hljs-comment">// 将子节点劫持到文档片段中</span>
+      }
+      <span class="hljs-keyword">return</span> flag
+    }</code></pre>
+        <h2 id="articleHeader11">8.添加calssName</h2>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="// 为元素添加类名
+export function addClass(el, className) {
+  // 先判断一下元素是否含有需要添加的类名，有则直接 return
+  if(hasClass(el, className)) {
+    return
+  }
+  // 把该元素含有的类名以空格分割
+  let newClass = el.className.split(' ')
+  // 把需要的类名 push 进来
+  newClass.push(className)
+  // 最后以空格拼接
+  el.className = newClass.join(' ')
+}
+
+// 判断是否有要查看的 className，有则返回true，否则返回 false
+export function hasClass(el, className) {
+  let reg = new RegExp('(^|\\s)' + className + '(\\s|$)')
+
+  return reg.test(el.className)
+}" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-comment">// 为元素添加类名</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span
+                    class="hljs-title">addClass</span>(<span class="hljs-params">el, className</span>) </span>{
+  <span class="hljs-comment">// 先判断一下元素是否含有需要添加的类名，有则直接 return</span>
+  <span class="hljs-keyword">if</span>(hasClass(el, className)) {
+    <span class="hljs-keyword">return</span>
+  }
+  <span class="hljs-comment">// 把该元素含有的类名以空格分割</span>
+  <span class="hljs-keyword">let</span> newClass = el.className.split(<span class="hljs-string">' '</span>)
+  <span class="hljs-comment">// 把需要的类名 push 进来</span>
+  newClass.push(className)
+  <span class="hljs-comment">// 最后以空格拼接</span>
+  el.className = newClass.join(<span class="hljs-string">' '</span>)
+}
+
+<span class="hljs-comment">// 判断是否有要查看的 className，有则返回true，否则返回 false</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span
+                    class="hljs-title">hasClass</span>(<span class="hljs-params">el, className</span>) </span>{
+  <span class="hljs-keyword">let</span> reg = <span class="hljs-keyword">new</span> <span
+                    class="hljs-built_in">RegExp</span>(<span class="hljs-string">'(^|\\s)'</span> + className + <span
+                    class="hljs-string">'(\\s|$)'</span>)
+
+  <span class="hljs-keyword">return</span> reg.test(el.className)
+}</code></pre>
+        <h2 id="articleHeader12">9.自动添加游览器前缀</h2>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="let elementStyle = document.createElement('div').style
+// 主流浏览器内核
+let vendor = (() => {
+  let transfromNames = {
+    webkit: 'webkitTransform',
+    Moz: 'MozTransform',
+    ms: 'msTransform',
+    O: 'OTransform',
+    standard: 'transform'
+  }
+  for(let key in transfromNames) {
+    if(elementStyle[transfromNames[key]] !== undefined) {
+
+      return key
+    }
+  }
+
+  return false
+})()
+
+// 添加样式的浏览器前缀
+export function prefixStyle(style) {
+  if(vendor === false) {
+    return false
+  }
+
+  if(vendor === 'standard') {
+    return style
+  }
+
+  return vendor + style.charAt(0).toUpperCase() + style.substr(1)
+}" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs typescript"><code><span class="hljs-keyword">let</span> elementStyle = <span
+                class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'div'</span>).style
+<span class="hljs-comment">// 主流浏览器内核</span>
+<span class="hljs-keyword">let</span> vendor = <span class="hljs-function">(<span class="hljs-params">(<span
+                    class="hljs-params"></span>) =&gt; {
+  <span class="hljs-keyword">let</span> transfromNames = {
+    webkit: 'webkitTransform',
+    Moz: 'MozTransform',
+    ms: 'msTransform',
+    O: 'OTransform',
+    standard: 'transform'
+  }
+  <span class="hljs-keyword">for</span>(<span class="hljs-params"><span class="hljs-keyword">let</span> key <span
+                        class="hljs-keyword">in</span> transfromNames</span>) {
+    <span class="hljs-keyword">if</span>(<span class="hljs-params">elementStyle[transfromNames[key]] !== <span
+                        class="hljs-literal">undefined</span></span>) {
+
+      <span class="hljs-keyword">return</span> key
+    }
+  }
+
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+}</span>)<span class="hljs-params">()</span>
+
+// 添加样式的浏览器前缀
+<span class="hljs-params">export</span> <span class="hljs-params">function</span> <span
+                        class="hljs-params">prefixStyle</span>(<span class="hljs-params">style</span>) {
+  <span class="hljs-params">if</span>(<span class="hljs-params">vendor === <span
+                        class="hljs-literal">false</span></span>) {
+    <span class="hljs-params">return</span> <span class="hljs-params">false</span>
+  }
+
+  <span class="hljs-params">if</span>(<span class="hljs-params">vendor === 'standard'</span>) {
+    <span class="hljs-params">return</span> <span class="hljs-params">style</span>
+  }
+
+  <span class="hljs-params">return</span> <span class="hljs-params">vendor</span> + <span
+                        class="hljs-params">style</span>.<span class="hljs-params">charAt</span>(<span
+                        class="hljs-params">0</span>).<span class="hljs-params">toUpperCase</span><span
+                        class="hljs-params">()</span> + <span class="hljs-params">style</span>.<span
+                        class="hljs-params">substr</span>(<span class="hljs-params">1</span>)
+}</span></code></pre>
+        <h2 id="articleHeader13">10.图片懒加载</h2>
+        <blockquote>
+            定义：延迟加载也称为惰性加载，即在长网页中延迟加载图像。用户滚动到它们之前，视口外的图像不会加载。这与图像预加载相反，在长网页上使用延迟加载将使网页加载更快。在某些情况下，它还可以帮助减少服务器负载。
+        </blockquote>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="<!DOCTYPE html>
+<html lang=&quot;en&quot;>
+<head>
+    <meta charset=&quot;UTF-8&quot;>
+    <title>Lazyload 1</title>
+    <style>
+        img {
+        display: block;
+        margin-bottom: 50px;
+        height: 200px;
+    }
+    </style>
 </head>
 <body>
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> HTML2 <span class="c-gray en">&gt;</span> HTML2 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
-<!--<table class="table">-->
-	<!--<tr>-->
-		<!--<td width="200" class="va-t"><ul id="treeDemo" class="ztree"></ul></td>-->
-		<!--<td class="va-t"><iframe ID="testIframe" Name="testIframe" FRAMEBORDER=0 SCROLLING=AUTO width=100%  height=390px SRC="product-category-add.html"></iframe></td>-->
-	<!--</tr>-->
-<!--</table>-->
+    <img src=&quot;images/loading.gif&quot; data-src=&quot;images/1.png&quot;>
+    <img src=&quot;images/loading.gif&quot; data-src=&quot;images/2.png&quot;>
+    <img src=&quot;images/loading.gif&quot; data-src=&quot;images/3.png&quot;>
+    <img src=&quot;images/loading.gif&quot; data-src=&quot;images/4.png&quot;>
+    <img src=&quot;images/loading.gif&quot; data-src=&quot;images/5.png&quot;>
+    <img src=&quot;images/loading.gif&quot; data-src=&quot;images/6.png&quot;>
+    <img src=&quot;images/loading.gif&quot; data-src=&quot;images/7.png&quot;>
+    <img src=&quot;images/loading.gif&quot; data-src=&quot;images/8.png&quot;>
+    <img src=&quot;images/loading.gif&quot; data-src=&quot;images/9.png&quot;>
+    <img src=&quot;images/loading.gif&quot; data-src=&quot;images/10.png&quot;>
+    <img src=&quot;images/loading.gif&quot; data-src=&quot;images/11.png&quot;>
+    <img src=&quot;images/loading.gif&quot; data-src=&quot;images/12.png&quot;>
+  <!--  <script>
+        var num = document.getElementsByTagName('img').length;
+        var img = document.getElementsByTagName(&quot;img&quot;);
+        var n = 0; //存储图片加载到的位置，避免每次都从第一张图片开始遍历
+        lazyload(); //页面载入完毕加载可是区域内的图片
+        window.onscroll = lazyload;
+        function lazyload() { //监听页面滚动事件
+            var seeHeight = document.documentElement.clientHeight; //可见区域高度
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop; //滚动条距离顶部高度
+            for (var i = n; i < num; i++) {
+                if (img[i].offsetTop < seeHeight + scrollTop) {
+                    if (img[i].getAttribute(&quot;src&quot;) == &quot;images/loading.gif&quot;) {
+                        img[i].src = img[i].getAttribute(&quot;data-src&quot;);
+                    }
+                    n = i + 1;
+                }
+            }
+        }
+    </script>-->
+    //对比一下上下两种代码，一个变量是全局变量，一个是函数的局部作用域，
+    <script>
+        function lazyload() {
+            var images = document.getElementsByTagName('img');
+            var len    = images.length;
+            var n      = 0;      //存储图片加载到的位置，避免每次都从第一张图片开始遍历
+            return function() {
+                var seeHeight = document.documentElement.clientHeight;
+                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                for(var i = n; i < len; i++) {
+                    if(images[i].offsetTop < seeHeight + scrollTop) {
+                        if(images[i].getAttribute('src') === 'images/loading.gif') {
+                          images[i].src = images[i].getAttribute('data-src');
+                        }
+                        n = n + 1;
+                     }
+                 }
+             }
+        }
+
+        var loadImages = lazyload();
+
+        loadImages();          //初始化首页的页面图片
+
+        window.addEventListener('scroll', loadImages, false);
+</script>
+</body>
+</html>" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs xml"><code><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span
+        class="hljs-string">"en"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span
+            class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Lazyload 1<span
+                    class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+        <span class="hljs-selector-tag">img</span> {
+        <span class="hljs-attribute">display</span>: block;
+        <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">50px</span>;
+        <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;
+    }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span
+            class="hljs-string">"images/loading.gif"</span> <span class="hljs-attr">data-src</span>=<span
+            class="hljs-string">"images/1.png"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span
+            class="hljs-string">"images/loading.gif"</span> <span class="hljs-attr">data-src</span>=<span
+            class="hljs-string">"images/2.png"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span
+            class="hljs-string">"images/loading.gif"</span> <span class="hljs-attr">data-src</span>=<span
+            class="hljs-string">"images/3.png"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span
+            class="hljs-string">"images/loading.gif"</span> <span class="hljs-attr">data-src</span>=<span
+            class="hljs-string">"images/4.png"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span
+            class="hljs-string">"images/loading.gif"</span> <span class="hljs-attr">data-src</span>=<span
+            class="hljs-string">"images/5.png"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span
+            class="hljs-string">"images/loading.gif"</span> <span class="hljs-attr">data-src</span>=<span
+            class="hljs-string">"images/6.png"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span
+            class="hljs-string">"images/loading.gif"</span> <span class="hljs-attr">data-src</span>=<span
+            class="hljs-string">"images/7.png"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span
+            class="hljs-string">"images/loading.gif"</span> <span class="hljs-attr">data-src</span>=<span
+            class="hljs-string">"images/8.png"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span
+            class="hljs-string">"images/loading.gif"</span> <span class="hljs-attr">data-src</span>=<span
+            class="hljs-string">"images/9.png"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span
+            class="hljs-string">"images/loading.gif"</span> <span class="hljs-attr">data-src</span>=<span
+            class="hljs-string">"images/10.png"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span
+            class="hljs-string">"images/loading.gif"</span> <span class="hljs-attr">data-src</span>=<span
+            class="hljs-string">"images/11.png"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span
+            class="hljs-string">"images/loading.gif"</span> <span class="hljs-attr">data-src</span>=<span
+            class="hljs-string">"images/12.png"</span>&gt;</span>
+  <span class="hljs-comment">&lt;!--  &lt;script&gt;
+        var num = document.getElementsByTagName('img').length;
+        var img = document.getElementsByTagName("img");
+        var n = 0; //存储图片加载到的位置，避免每次都从第一张图片开始遍历
+        lazyload(); //页面载入完毕加载可是区域内的图片
+        window.onscroll = lazyload;
+        function lazyload() { //监听页面滚动事件
+            var seeHeight = document.documentElement.clientHeight; //可见区域高度
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop; //滚动条距离顶部高度
+            for (var i = n; i &lt; num; i++) {
+                if (img[i].offsetTop &lt; seeHeight + scrollTop) {
+                    if (img[i].getAttribute("src") == "images/loading.gif") {
+                        img[i].src = img[i].getAttribute("data-src");
+                    }
+                    n = i + 1;
+                }
+            }
+        }
+    &lt;/script&gt;--&gt;</span>
+    //对比一下上下两种代码，一个变量是全局变量，一个是函数的局部作用域，
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">lazyload</span>(<span
+                class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">var</span> images = <span class="hljs-built_in">document</span>.getElementsByTagName(<span
+                    class="hljs-string">'img'</span>);
+            <span class="hljs-keyword">var</span> len    = images.length;
+            <span class="hljs-keyword">var</span> n      = <span class="hljs-number">0</span>;      <span
+                    class="hljs-comment">//存储图片加载到的位置，避免每次都从第一张图片开始遍历        </span>
+            <span class="hljs-keyword">return</span> <span class="hljs-function"><span
+                    class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+                <span class="hljs-keyword">var</span> seeHeight = <span class="hljs-built_in">document</span>.documentElement.clientHeight;
+                <span class="hljs-keyword">var</span> scrollTop = <span class="hljs-built_in">document</span>.documentElement.scrollTop || <span
+                    class="hljs-built_in">document</span>.body.scrollTop;
+                <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = n; i &lt; len; i++) {
+                    <span class="hljs-keyword">if</span>(images[i].offsetTop &lt; seeHeight + scrollTop) {
+                        <span class="hljs-keyword">if</span>(images[i].getAttribute(<span
+                    class="hljs-string">'src'</span>) === <span class="hljs-string">'images/loading.gif'</span>) {
+                          images[i].src = images[i].getAttribute(<span class="hljs-string">'data-src'</span>);
+                        }
+                        n = n + <span class="hljs-number">1</span>;
+                     }
+                 }
+             }
+        }
+
+        <span class="hljs-keyword">var</span> loadImages = lazyload();
+
+        loadImages();          <span class="hljs-comment">//初始化首页的页面图片</span>
+
+        <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">'scroll'</span>, loadImages, <span
+                    class="hljs-literal">false</span>);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+        <p><strong>jQuery</strong></p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="<script>
+    var n = 0,
+        imgNum = $(&quot;img&quot;).length,
+        img = $('img');
+    lazyload();
+    $(window).scroll(lazyload);
+    function lazyload(event) {
+        for (var i = n; i < imgNum; i++) {
+            if (img.eq(i).offset().top < parseInt($(window).height()) + parseInt($(window).scrollTop())) {
+                if (img.eq(i).attr(&quot;src&quot;) == &quot;default.jpg&quot;) {
+                    var src = img.eq(i).attr(&quot;data-src&quot;);
+                    img.eq(i).attr(&quot;src&quot;, src);
+                    n = i + 1;
+                }
+            }
+        }
+    }
+</script>" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs perl"><code>&lt;script&gt;
+    var n = <span class="hljs-number">0</span>,
+        imgNum = $(<span class="hljs-string">"img"</span>).length,
+        img = $(<span class="hljs-string">'img'</span>);
+    lazyload();
+    $(window).scroll(lazyload);
+    function lazyload(event) {
+        <span class="hljs-keyword">for</span> (var i = n; i &lt; imgNum; i++) {
+            <span class="hljs-keyword">if</span> (img.e<span class="hljs-string">q(i)</span>.offset().top &lt; parseInt($(window).height()) + parseInt($(window).scrollTop())) {
+                <span class="hljs-keyword">if</span> (img.e<span class="hljs-string">q(i)</span>.attr(<span
+                    class="hljs-string">"src"</span>) == <span class="hljs-string">"default.jpg"</span>) {
+                    var src = img.e<span class="hljs-string">q(i)</span>.attr(<span
+                    class="hljs-string">"data-src"</span>);
+                    img.e<span class="hljs-string">q(i)</span>.attr(<span class="hljs-string">"src"</span>, src);
+                    n = i + <span class="hljs-number">1</span>;
+                }
+            }
+        }
+    }
+&lt;<span class="hljs-regexp">/script&gt;</span></code></pre>
+        <h2 id="articleHeader14">11.img加载图片失败时，使用默认图片</h2>
+        <ul>
+            <li>img标签自带onError属性，当图片加载失败时，触发error事件：<p><code>&lt;img src="image.png" onError='this.src="http://ww.jpg"'
+                /&gt;</code></p>
+            </li>
+            <li>
+                <p>jQuery的error事件</p>
+                <div class="widget-codetool" style="display:none;">
+                    <div class="widget-codetool--inner">
+                        <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                              data-original-title="全选"></span>
+                        <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                              data-clipboard-text="$('img').error(function(){
+    $(this).attr('src',&quot;http://ww.jpg&quot;);
+});" title="" data-original-title="复制"></span>
+                    </div>
+                </div>
+                <pre class="hljs javascript"><code>$(<span class="hljs-string">'img'</span>).error(<span
+                        class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                        class="hljs-params"></span>)</span>{
+    $(<span class="hljs-keyword">this</span>).attr(<span class="hljs-string">'src'</span>,<span class="hljs-string">"http://ww.jpg"</span>);
+});</code></pre>
+            </li>
+            <li>
+                <p>
+                    jQuery的one绑定<br>使用<code>onerror</code>或者<code>jQuery的error</code>事件时，如果默认图片也发生加载失败，则会形成死循环，最好的办法是使用<code>one</code>绑定事件，只执行一次
+                </p>
+                <div class="widget-codetool" style="display:none;">
+                    <div class="widget-codetool--inner">
+                        <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                              data-original-title="全选"></span>
+                        <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                              data-clipboard-text="$(&quot;img&quot;).one(&quot;error&quot;, function(e){
+     $(this).attr(&quot;src&quot;, &quot;http://ww.jpg&quot;);
+});" title="" data-original-title="复制"></span>
+                    </div>
+                </div>
+                <pre class="hljs javascript"><code>$(<span class="hljs-string">"img"</span>).one(<span
+                        class="hljs-string">"error"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                        class="hljs-params">e</span>)</span>{
+     $(<span class="hljs-keyword">this</span>).attr(<span class="hljs-string">"src"</span>, <span class="hljs-string">"http://ww.jpg"</span>);
+});</code></pre>
+            </li>
+        </ul>
+        <h2 id="articleHeader15">12.图片按比例响应式缩放、裁剪</h2>
+        <p>html部分：</p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="<div class=&quot;zoomImage&quot; style=&quot;background-image:url(images/test1.jpg)&quot;></div>"
+                      title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code style="word-break: break-word; white-space: initial;">&lt;div <span
+                class="hljs-class"><span class="hljs-keyword">class</span></span>=<span
+                class="hljs-string">"zoomImage"</span> style=<span class="hljs-string">"background-image:url(images/test1.jpg)"</span>&gt;<span
+                class="xml"><span class="hljs-tag">&lt;/<span
+                class="hljs-name">div</span>&gt;</span></span></code></pre>
+        <p>css部分：</p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text=".zoomImage{
+    width:100%;
+    height:0;
+    padding-bottom: 100%;
+    overflow:hidden;
+    //padding为百分比的时候根据他父层的宽度来进行计算
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    //把背景图像扩展至完全覆盖背景区域
+    background-size:cover;
+}" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs groovy"><code>.zoomImage{
+<span class="hljs-symbol">    width:</span><span class="hljs-number">100</span>%;
+<span class="hljs-symbol">    height:</span><span class="hljs-number">0</span>;
+    padding-<span class="hljs-string">bottom:</span> <span class="hljs-number">100</span>%;
+<span class="hljs-symbol">    overflow:</span>hidden;
+    <span class="hljs-comment">//padding为百分比的时候根据他父层的宽度来进行计算</span>
+    background-<span class="hljs-string">position:</span> center center;
+    background-<span class="hljs-string">repeat:</span> no-repeat;
+    -webkit-background-<span class="hljs-string">size:</span>cover;
+    -moz-background-<span class="hljs-string">size:</span>cover;
+    <span class="hljs-comment">//把背景图像扩展至完全覆盖背景区域</span>
+    background-<span class="hljs-string">size:</span>cover;
+}</code></pre>
+        <p>总结：你所需要的比例，就是width与padding-bottom的比例 <br>用的时候，直接把.zoomImage当成img标签来用就可以了。</p>
+        <p><strong>思维扩展</strong><br>很多轮播的插件本来是响应式的， 但可能有两个问题： <br>1.这个轮播图你必须要给他一个高度，但高度不是固定死的，是需要按比例的...<br>2.轮播图里的图片不是需要的比例...<br>所以我们可以用刚刚上面的padding方法<br>拿swiper轮播图插件举例
+        </p>
+        <p>优化前</p>
+        <p><span class="img-wrap"><img data-src="/img/bVbnakH?w=546&amp;h=380"
+                                       src="https://static.segmentfault.com/v-5c3db95a/global/img/squares.svg"
+                                       alt="clipboard.png" title="clipboard.png" style="cursor: pointer;"></span></p>
+        <p>优化后</p>
+        <p><span class="img-wrap"><img data-src="/img/bVbnakK?w=1074&amp;h=501"
+                                       src="https://static.segmentfault.com/v-5c3db95a/global/img/squares.svg"
+                                       alt="clipboard.png" title="clipboard.png" style="cursor: pointer;"></span></p>
+        <p>本节详细：<a href="http://blog.csdn.net/oulihong123/article/details/54601030" rel="nofollow noreferrer"
+                   target="_blank">如何让图片按比例响应式缩放、并自动裁剪的css技巧</a></p>
+        <h2 id="articleHeader16">13.选项卡切换</h2>
+        <p>html的结构和样式：</p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="<style type=&quot;text/css&quot;>
+        #div1 div{
+            width: 200px;
+            height:200px;
+            border: 1px #000 solid;
+            display: none;
+        }
+        .active{
+            background: red;
+        }
+</style>
+<body>
+    <div id=&quot;div1&quot;>
+        <button class=&quot;active&quot;>1</button>
+        <button>2</button>
+        <button>3</button>
+        <div style=&quot;display: block;&quot;>111</div>
+        <div>222</div>
+        <div>333</div>
+    </div>
+</body>" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs xml"><code><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span
+                class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span>&gt;</span><span class="css">
+        <span class="hljs-selector-id">#div1</span> <span class="hljs-selector-tag">div</span>{
+            <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+            <span class="hljs-attribute">height</span>:<span class="hljs-number">200px</span>;
+            <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> <span class="hljs-number">#000</span> solid;
+            <span class="hljs-attribute">display</span>: none;
+        }
+        <span class="hljs-selector-class">.active</span>{
+            <span class="hljs-attribute">background</span>: red;
+        }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span
+            class="hljs-string">"div1"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span
+                class="hljs-string">"active"</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>2<span class="hljs-tag">&lt;/<span
+                    class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>3<span class="hljs-tag">&lt;/<span
+                    class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span
+                class="hljs-string">"display: block;"</span>&gt;</span>111<span class="hljs-tag">&lt;/<span
+                    class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>222<span class="hljs-tag">&lt;/<span
+                    class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>333<span class="hljs-tag">&lt;/<span
+                    class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="//过程式的编程思想
+window.onload=function(){
+    //获取元素
+    var oParent=document.getElementById('div1');
+    var btns=oParent.getElementsByTagName('button');
+    var divs=oParent.getElementsByTagName('div');
+    //通过循环给每个btn添加点击事件
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].index=i;//存储当前btn的下标
+        btns[i].onclick=function(){
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].className='';
+                divs[i].style.display='none';
+            }
+            this.className='active';
+            divs[this.index].style.display='block';//让对应当前btn的div显示
+        }
+    }
+}" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-comment">//过程式的编程思想</span>
+<span class="hljs-built_in">window</span>.onload=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>)</span>{
+    <span class="hljs-comment">//获取元素</span>
+    <span class="hljs-keyword">var</span> oParent=<span class="hljs-built_in">document</span>.getElementById(<span
+                    class="hljs-string">'div1'</span>);
+    <span class="hljs-keyword">var</span> btns=oParent.getElementsByTagName(<span class="hljs-string">'button'</span>);
+    <span class="hljs-keyword">var</span> divs=oParent.getElementsByTagName(<span class="hljs-string">'div'</span>);
+    <span class="hljs-comment">//通过循环给每个btn添加点击事件</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; btns.length; i++) {
+        btns[i].index=i;<span class="hljs-comment">//存储当前btn的下标</span>
+        btns[i].onclick=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>)</span>{
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span
+                    class="hljs-number">0</span>; i &lt; btns.length; i++) {
+                btns[i].className=<span class="hljs-string">''</span>;
+                divs[i].style.display=<span class="hljs-string">'none'</span>;
+            }
+            <span class="hljs-keyword">this</span>.className=<span class="hljs-string">'active'</span>;
+            divs[<span class="hljs-keyword">this</span>.index].style.display=<span
+                    class="hljs-string">'block'</span>;<span class="hljs-comment">//让对应当前btn的div显示</span>
+        }
+    }
+}</code></pre>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="//面向对象
+window.onload = function(){
+    var t1=new Tab();
+    t1.init();
+};
+
+ function Tab() {
+     this.btns=oParent.getElementsByTagName('button');
+    this.divs=oParent.getElementsByTagName('div');
+ }
+
+Tab.prototype.init=function(){
+    var This=this;
+    for (var i = 0; i < this.btns.length; i++) {
+        this.btns[i].index=i;
+        this.btns[i].onclick=function(){
+            This.change(this);
+        }
+    }
+}
+Tab.prototype.change=function(btn) {
+    for (var i = 0; i < this.btns.length; i++) {
+        this.btns[i].className='';
+        this.divs[i].style.display='none';
+    }
+    btn.className='active';
+    this.divs[btn.index].style.display='block';
+};" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-comment">//面向对象</span>
+<span class="hljs-built_in">window</span>.onload = <span class="hljs-function"><span
+                    class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">var</span> t1=<span class="hljs-keyword">new</span> Tab();
+    t1.init();
+};
+
+ <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Tab</span>(<span
+         class="hljs-params"></span>) </span>{
+     <span class="hljs-keyword">this</span>.btns=oParent.getElementsByTagName(<span class="hljs-string">'button'</span>);
+    <span class="hljs-keyword">this</span>.divs=oParent.getElementsByTagName(<span class="hljs-string">'div'</span>);
+ }
+
+Tab.prototype.init=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">var</span> This=<span class="hljs-keyword">this</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span
+                    class="hljs-keyword">this</span>.btns.length; i++) {
+        <span class="hljs-keyword">this</span>.btns[i].index=i;
+        <span class="hljs-keyword">this</span>.btns[i].onclick=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>)</span>{
+            This.change(<span class="hljs-keyword">this</span>);
+        }
+    }
+}
+Tab.prototype.change=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">btn</span>) </span>{
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span
+                    class="hljs-keyword">this</span>.btns.length; i++) {
+        <span class="hljs-keyword">this</span>.btns[i].className=<span class="hljs-string">''</span>;
+        <span class="hljs-keyword">this</span>.divs[i].style.display=<span class="hljs-string">'none'</span>;
+    }
+    btn.className=<span class="hljs-string">'active'</span>;
+    <span class="hljs-keyword">this</span>.divs[btn.index].style.display=<span class="hljs-string">'block'</span>;
+};</code></pre>
+        <h2 id="articleHeader17">14.元素拖拽</h2>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="#div1{
+    width: 100px;
+    height: 100px;
+    background: red;
+    position: absolute;
+}
+<body>
+    <div id='div1'></div>
+</body>" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs xml"><code>#div1{
+    width: 100px;
+    height: 100px;
+    background: red;
+    position: absolute;
+}
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span
+            class="hljs-string">'div1'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="//过程式的编程思想
+window.onload=function(){
+    var oDiv=document.getElementById('div1');
+
+    var disX=0;
+    var disY=0;
+
+    oDiv.onmousedown=function(ev){
+        var ev=ev || window.event;
+        disX=ev.clientX-oDiv.offsetLeft;
+        disY=ev.clientY-oDiv.offsetTop;
+
+        document.onmousemove=function(ev){
+            var ev=ev || window.event;
+            oDiv.style.left=ev.clientX-disX+'px';
+            oDiv.style.top=ev.clientY-disY+'px';
+        };
+        document.onmouseup=function(){
+            document.onmousemove=null;
+            document.onmouseup=null;
+        }
+        return false;
+    }
+}" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-comment">//过程式的编程思想</span>
+<span class="hljs-built_in">window</span>.onload=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">var</span> oDiv=<span class="hljs-built_in">document</span>.getElementById(<span
+                    class="hljs-string">'div1'</span>);
+
+    <span class="hljs-keyword">var</span> disX=<span class="hljs-number">0</span>;
+    <span class="hljs-keyword">var</span> disY=<span class="hljs-number">0</span>;
+
+    oDiv.onmousedown=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params">ev</span>)</span>{
+        <span class="hljs-keyword">var</span> ev=ev || <span class="hljs-built_in">window</span>.event;
+        disX=ev.clientX-oDiv.offsetLeft;
+        disY=ev.clientY-oDiv.offsetTop;
+
+        <span class="hljs-built_in">document</span>.onmousemove=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params">ev</span>)</span>{
+            <span class="hljs-keyword">var</span> ev=ev || <span class="hljs-built_in">window</span>.event;
+            oDiv.style.left=ev.clientX-disX+<span class="hljs-string">'px'</span>;
+            oDiv.style.top=ev.clientY-disY+<span class="hljs-string">'px'</span>;
+        };
+        <span class="hljs-built_in">document</span>.onmouseup=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>)</span>{
+            <span class="hljs-built_in">document</span>.onmousemove=<span class="hljs-literal">null</span>;
+            <span class="hljs-built_in">document</span>.onmouseup=<span class="hljs-literal">null</span>;
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+}</code></pre>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="//面向对象
+window.onload = function() {
+  var d1 = new Drag('div1');
+  d1.init();
+};
+
+function Drag(id) {
+  this.oDiv = document.getElementById(id);
+  this.disX = 0;
+  this.disY = 0;
+}
+Drag.prototype.init = function() {
+  var This = this;
+  this.oDiv.onmousedown = function(ev) {
+    var ev = ev || window.event;
+    This.fnDown(ev);
+    return false;
+  };
+};
+
+Drag.prototype.fnDown = function(ev) {
+  var This = this;
+  this.disX = ev.clientX - this.oDiv.offsetLeft;
+  this.disY = ev.clientY - this.oDiv.offsetTop;
+
+  document.onmousemove = function(ev) {
+    var ev = ev || window.event;
+    This.fnMove(ev);
+  };
+  document.onmouseup = function() {
+    This.fnUp();
+  }
+};
+
+
+Drag.prototype.fnMove = function(ev) {
+
+  this.oDiv.style.left = ev.clientX - this.disX + 'px';
+  this.oDiv.style.top = ev.clientY - this.disY + 'px';
+};
+
+Drag.prototype.fnUp = function() {
+  document.onmousemove = null;
+  document.onmouseup = null;
+};" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-comment">//面向对象</span>
+<span class="hljs-built_in">window</span>.onload = <span class="hljs-function"><span
+                    class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">var</span> d1 = <span class="hljs-keyword">new</span> Drag(<span
+                    class="hljs-string">'div1'</span>);
+  d1.init();
+};
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Drag</span>(<span
+        class="hljs-params">id</span>) </span>{
+  <span class="hljs-keyword">this</span>.oDiv = <span class="hljs-built_in">document</span>.getElementById(id);
+  <span class="hljs-keyword">this</span>.disX = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">this</span>.disY = <span class="hljs-number">0</span>;
+}
+Drag.prototype.init = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">var</span> This = <span class="hljs-keyword">this</span>;
+  <span class="hljs-keyword">this</span>.oDiv.onmousedown = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params">ev</span>) </span>{
+    <span class="hljs-keyword">var</span> ev = ev || <span class="hljs-built_in">window</span>.event;
+    This.fnDown(ev);
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+  };
+};
+
+Drag.prototype.fnDown = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params">ev</span>) </span>{
+  <span class="hljs-keyword">var</span> This = <span class="hljs-keyword">this</span>;
+  <span class="hljs-keyword">this</span>.disX = ev.clientX - <span class="hljs-keyword">this</span>.oDiv.offsetLeft;
+  <span class="hljs-keyword">this</span>.disY = ev.clientY - <span class="hljs-keyword">this</span>.oDiv.offsetTop;
+
+  <span class="hljs-built_in">document</span>.onmousemove = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params">ev</span>) </span>{
+    <span class="hljs-keyword">var</span> ev = ev || <span class="hljs-built_in">window</span>.event;
+    This.fnMove(ev);
+  };
+  <span class="hljs-built_in">document</span>.onmouseup = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>) </span>{
+    This.fnUp();
+  }
+};
+
+
+Drag.prototype.fnMove = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params">ev</span>) </span>{
+
+  <span class="hljs-keyword">this</span>.oDiv.style.left = ev.clientX - <span
+                    class="hljs-keyword">this</span>.disX + <span class="hljs-string">'px'</span>;
+  <span class="hljs-keyword">this</span>.oDiv.style.top = ev.clientY - <span
+                    class="hljs-keyword">this</span>.disY + <span class="hljs-string">'px'</span>;
+};
+
+Drag.prototype.fnUp = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>) </span>{
+  <span class="hljs-built_in">document</span>.onmousemove = <span class="hljs-literal">null</span>;
+  <span class="hljs-built_in">document</span>.onmouseup = <span class="hljs-literal">null</span>;
+};</code></pre>
+        <h2 id="articleHeader18">15.函数节流（throttle）</h2>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="//fn 要执行的函数
+//delay 延迟
+//atleast  在time时间内必须执行一次
+function throttle(fn, delay, atleast) {
+    var timeout = null,
+         startTime = new Date();
+    return function() {
+        var curTime = new Date();
+        clearTimeout(timeout);
+         // 如果达到了规定的触发时间间隔，触发 handler
+        if(curTime - startTime >= atleast) {
+            fn();
+            startTime = curTime;
+        }else {
+         // 没达到触发间隔，重新设定定时器
+            timeout = setTimeout(fn, delay);
+        }
+    }
+}
+
+// 实际想绑定在 scroll 事件上的 handler
+function lazyload(event) {
+  console.log('触发了')
+}" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-comment">//fn 要执行的函数</span>
+<span class="hljs-comment">//delay 延迟</span>
+<span class="hljs-comment">//atleast  在time时间内必须执行一次</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">throttle</span>(<span
+        class="hljs-params">fn, delay, atleast</span>) </span>{
+    <span class="hljs-keyword">var</span> timeout = <span class="hljs-literal">null</span>,
+         startTime = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span
+                    class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">var</span> curTime = <span class="hljs-keyword">new</span> <span
+                    class="hljs-built_in">Date</span>();
+        clearTimeout(timeout);
+         <span class="hljs-comment">// 如果达到了规定的触发时间间隔，触发 handler</span>
+        <span class="hljs-keyword">if</span>(curTime - startTime &gt;= atleast) {
+            fn();
+            startTime = curTime;
+        }<span class="hljs-keyword">else</span> {
+         <span class="hljs-comment">// 没达到触发间隔，重新设定定时器</span>
+            timeout = setTimeout(fn, delay);
+        }
+    }
+}
+
+<span class="hljs-comment">// 实际想绑定在 scroll 事件上的 handler</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">lazyload</span>(<span
+        class="hljs-params">event</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'触发了'</span>)
+}</code></pre>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="// 采用了节流函数
+window.addEventListener('scroll',throttle(lazyload,500,1000));" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs typescript"><code><span class="hljs-comment">// 采用了节流函数</span>
+<span class="hljs-built_in">window</span>.addEventListener(<span
+                    class="hljs-string">'scroll'</span>,throttle(lazyload,<span class="hljs-number">500</span>,<span
+                    class="hljs-number">1000</span>));</code></pre>
+        <h2 id="articleHeader19">16.函数去抖（debounce）</h2>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="// debounce函数用来包裹我们的事件
+function debounce(fn, delay) {
+  // 持久化一个定时器 timer
+  let timer = null;
+  return function() {
+    // 如果事件被触发，清除 timer 并重新开始计时
+    clearTimeout(timer);
+    timer = setTimeout(function() {
+      fn();
+    }, delay);
+  }
+}
+
+// 实际想绑定在 scroll 事件上的 handler
+function lazyload(event) {
+    console.log('触发了')
+}
+// 采用了去抖函数
+window.addEventListener('scroll',debounce(lazyload,500));" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-comment">// debounce函数用来包裹我们的事件</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">debounce</span>(<span
+        class="hljs-params">fn, delay</span>) </span>{
+  <span class="hljs-comment">// 持久化一个定时器 timer</span>
+  <span class="hljs-keyword">let</span> timer = <span class="hljs-literal">null</span>;
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// 如果事件被触发，清除 timer 并重新开始计时</span>
+    clearTimeout(timer);
+    timer = setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>) </span>{
+      fn();
+    }, delay);
+  }
+}
+
+<span class="hljs-comment">// 实际想绑定在 scroll 事件上的 handler</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">lazyload</span>(<span
+        class="hljs-params">event</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'触发了'</span>)
+}
+<span class="hljs-comment">// 采用了去抖函数</span>
+<span class="hljs-built_in">window</span>.addEventListener(<span
+                    class="hljs-string">'scroll'</span>,debounce(lazyload,<span class="hljs-number">500</span>));</code></pre>
+        <h2 id="articleHeader20">17.分时函数</h2>
+        <p>如果一次获得了很多数据(比如有10W数据)，然后在前端渲染的时候会卡到爆,所以在处理这么多数据的时候，我们可以选择分批进行。</p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="function timeChunk(data, fn, count = 1, wait) {
+    let obj, timer;
+
+    function start() {
+        let len = Math.min(count, data.length);
+        for (let i = 0; i < len; i++) {
+            val = data.shift();     // 每次取出一个数据，传给fn当做值来用
+            fn(val);
+        }
+    }
+
+    return function() {
+        timer = setInterval(function() {
+            if (data.length === 0) {    // 如果数据为空了，就清空定时器
+                return clearInterval(timer);
+            }
+            start();
+        }, wait);   // 分批执行的时间间隔
+    }
+}
+
+// 测试用例
+let arr = [];
+for (let i = 0; i < 100000; i++) {  // 这里跑了10万数据
+    arr.push(i);
+}
+let render = timeChunk(arr, function(n) {   // n为data.shift()取到的数据
+    let div = document.createElement('div');
+    div.innerHTML = n;
+    document.body.appendChild(div);
+}, 8, 20);
+
+render();" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span
+                class="hljs-title">timeChunk</span>(<span class="hljs-params">data, fn, count = <span
+                class="hljs-number">1</span>, wait</span>) </span>{
+    <span class="hljs-keyword">let</span> obj, timer;
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">start</span>(<span
+            class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">let</span> len = <span class="hljs-built_in">Math</span>.min(count, data.length);
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span
+                    class="hljs-number">0</span>; i &lt; len; i++) {
+            val = data.shift();     <span class="hljs-comment">// 每次取出一个数据，传给fn当做值来用</span>
+            fn(val);
+        }
+    }
+
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span
+                    class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        timer = setInterval(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">if</span> (data.length === <span class="hljs-number">0</span>) {    <span
+                    class="hljs-comment">// 如果数据为空了，就清空定时器</span>
+                <span class="hljs-keyword">return</span> clearInterval(timer);
+            }
+            start();
+        }, wait);   <span class="hljs-comment">// 分批执行的时间间隔</span>
+    }
+}
+
+<span class="hljs-comment">// 测试用例</span>
+<span class="hljs-keyword">let</span> arr = [];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span
+                    class="hljs-number">100000</span>; i++) {  <span class="hljs-comment">// 这里跑了10万数据</span>
+    arr.push(i);
+}
+<span class="hljs-keyword">let</span> render = timeChunk(arr, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params">n</span>) </span>{   <span class="hljs-comment">// n为data.shift()取到的数据</span>
+    <span class="hljs-keyword">let</span> div = <span class="hljs-built_in">document</span>.createElement(<span
+                    class="hljs-string">'div'</span>);
+    div.innerHTML = n;
+    <span class="hljs-built_in">document</span>.body.appendChild(div);
+}, <span class="hljs-number">8</span>, <span class="hljs-number">20</span>);
+
+render();</code></pre>
+        <p>参考文章：<a href="https://juejin.im/post/5ad6b34a6fb9a028cc61bfb3#heading-7" rel="nofollow noreferrer"
+                   target="_blank">高阶函数，你怎么那么漂亮呢！</a></p>
+        <h2 id="articleHeader21">18.惰性载入函数</h2>
+        <p>假如你要写一个函数，里面有一些判断语句</p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="function foo(){
+    if(a != b){
+        console.log('aaa')
+    }else{
+        console.log('bbb')
+    }
+}" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs lua"><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span
+                class="hljs-title">foo</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">if</span>(a != b){
+        console.<span class="hljs-built_in">log</span>(<span class="hljs-string">'aaa'</span>)
+    }<span class="hljs-keyword">else</span>{
+        console.<span class="hljs-built_in">log</span>(<span class="hljs-string">'bbb'</span>)
+    }
+}</code></pre>
+        <p>如果你的a和b是不变的，那么这个函数不论执行多少次，结果都是不变的，但是每次执行还要进行if判断，这就造成了不必要的浪费。<br>惰性载入表示函数执行的分支只会发生一次，这里有两种解决方式。</p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="// 常见的例子
+if (window.addEventListener) {
+    ele.addEventListener(type, fn, false);
+} else  if (window.attachEvent) {
+    ele.attachEvent('on' + type, fn);
+}" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs typescript"><code><span class="hljs-comment">// 常见的例子</span>
+<span class="hljs-keyword">if</span> (<span class="hljs-built_in">window</span>.addEventListener) {
+    ele.addEventListener(<span class="hljs-keyword">type</span>, fn, <span class="hljs-literal">false</span>);
+} <span class="hljs-keyword">else</span>  <span class="hljs-keyword">if</span> (<span
+                    class="hljs-built_in">window</span>.attachEvent) {
+    ele.attachEvent(<span class="hljs-string">'on'</span> + <span class="hljs-keyword">type</span>, fn);
+}</code></pre>
+        <p><strong>在函数被调用时再处理函数</strong></p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="function foo(){
+    if(a != b){
+        foo = function(){
+            console.log('aaa')
+        }
+    }else{
+        foo = function(){
+            console.log('bbb')
+        }
+    }
+    return foo();
+}" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs lua"><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span
+                class="hljs-title">foo</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">if</span>(a != b){
+        foo = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+            console.<span class="hljs-built_in">log</span>(<span class="hljs-string">'aaa'</span>)
+        }
+    }<span class="hljs-keyword">else</span>{
+        foo = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+            console.<span class="hljs-built_in">log</span>(<span class="hljs-string">'bbb'</span>)
+        }
+    }
+    <span class="hljs-keyword">return</span> foo();
+}</code></pre>
+        <p>这样进入每个分支后都会对foo进行赋值，覆盖了之前的函数，之后每次调用foo就不会再执行if判断</p>
+        <p><strong>在声明函数时就指定适当的函数</strong></p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="var foo = (function foo(){
+    if(a != b){
+        return function(){
+            console.log('aaa')
+        }
+    }else{
+        return function(){
+            console.log('bbb')
+        }
+    }
+})();" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-keyword">var</span> foo = (<span
+                class="hljs-function"><span class="hljs-keyword">function</span> <span
+                class="hljs-title">foo</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">if</span>(a != b){
+        <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>)</span>{
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'aaa'</span>)
+        }
+    }<span class="hljs-keyword">else</span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params"></span>)</span>{
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'bbb'</span>)
+        }
+    }
+})();</code></pre>
+        <p>本节参考文章：<a href="https://juejin.im/post/5aeff683f265da0ba351f786#heading-6" rel="nofollow noreferrer"
+                     target="_blank">JS高级技巧(简洁版)</a></p>
+        <h2 id="articleHeader22">19.实现once函数</h2>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="function test(){
+  alert('hello');
+}
+var once = function (fn) {
+  var isFirst = true;
+  return function () {
+    if (isFirst) {
+      isFirst = !isFirst;
+      fn();
+    }
+  };
+};
+once(test);
+once(test);" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs actionscript"><code><span class="hljs-function"><span
+                class="hljs-keyword">function</span> <span class="hljs-title">test</span><span
+                class="hljs-params">()</span></span>{
+  alert(<span class="hljs-string">'hello'</span>);
+}
+<span class="hljs-keyword">var</span> once = <span class="hljs-function"><span
+                    class="hljs-keyword">function</span> <span class="hljs-params">(fn)</span> </span>{
+  <span class="hljs-keyword">var</span> isFirst = <span class="hljs-literal">true</span>;
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span
+                    class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">if</span> (isFirst) {
+      isFirst = !isFirst;
+      fn();
+    }
+  };
+};
+once(test);
+once(test);</code></pre>
+        <h2 id="articleHeader23">20.requirejs架子</h2>
+        <p>require.js的诞生，就是为了解决这两个问题： 　　</p>
+        <ul>
+            <li>实现js文件的异步加载，避免网页失去响应；</li>
+            <li>管理模块之间的依赖性，便于代码的编写和维护。</li>
+        </ul>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="/** 网页中引入require.js及main.js **/
+<script src=&quot;js/require.js&quot; data-main=&quot;js/main&quot;></script>
+
+/** main.js 入口文件/主模块 **/
+// 首先用config()指定各模块路径和引用名
+require.config({
+  baseUrl: &quot;js/lib&quot;,
+  paths: {
+    &quot;jquery&quot;: &quot;jquery.min&quot;,  //实际路径为js/lib/jquery.min.js
+    &quot;underscore&quot;: &quot;underscore.min&quot;,
+  }
+});
+// 执行基本操作
+require([&quot;jquery&quot;,&quot;underscore&quot;],function($,_){
+  // some code here
+});" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-comment">/** 网页中引入require.js及main.js **/</span>
+&lt;script src=<span class="hljs-string">"js/require.js"</span> data-main=<span class="hljs-string">"js/main"</span>&gt;<span
+                    class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+
+<span class="hljs-comment">/** main.js 入口文件/主模块 **/</span>
+<span class="hljs-comment">// 首先用config()指定各模块路径和引用名</span>
+<span class="hljs-built_in">require</span>.config({
+  <span class="hljs-attr">baseUrl</span>: <span class="hljs-string">"js/lib"</span>,
+  <span class="hljs-attr">paths</span>: {
+    <span class="hljs-string">"jquery"</span>: <span class="hljs-string">"jquery.min"</span>,  <span
+                    class="hljs-comment">//实际路径为js/lib/jquery.min.js</span>
+    <span class="hljs-string">"underscore"</span>: <span class="hljs-string">"underscore.min"</span>,
+  }
+});
+<span class="hljs-comment">// 执行基本操作</span>
+<span class="hljs-built_in">require</span>([<span class="hljs-string">"jquery"</span>,<span class="hljs-string">"underscore"</span>],<span
+                    class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params">$,_</span>)</span>{
+  <span class="hljs-comment">// some code here</span>
+});</code></pre>
+        <p>引用模块的时候，我们将模块名放在[]中作为reqiure()的第一参数；如果我们定义的模块本身也依赖其他模块,那就需要将它们放在[]中作为define()的第一参数。</p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="// 定义math.js模块
+define(function () {
+    var basicNum = 0;
+    var add = function (x, y) {
+        return x + y;
+    };
+    return {
+        add: add,
+        basicNum :basicNum
+    };
+});
+// 定义一个依赖underscore.js的模块
+define(['underscore'],function(_){
+  var classify = function(list){
+    _.countBy(list,function(num){
+      return num > 30 ? 'old' : 'young';
+    })
+  };
+  return {
+    classify :classify
+  };
+})
+
+// 引用模块，将模块放在[]内
+require(['jquery', 'math'],function($, math){
+  var sum = math.add(10,20);
+  $(&quot;#sum&quot;).html(sum);
+});" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-comment">// 定义math.js模块</span>
+define(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span
+                    class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> basicNum = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">var</span> add = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span
+                    class="hljs-params">x, y</span>) </span>{
+        <span class="hljs-keyword">return</span> x + y;
+    };
+    <span class="hljs-keyword">return</span> {
+        <span class="hljs-attr">add</span>: add,
+        <span class="hljs-attr">basicNum</span> :basicNum
+    };
+});
+<span class="hljs-comment">// 定义一个依赖underscore.js的模块</span>
+define([<span class="hljs-string">'underscore'</span>],<span class="hljs-function"><span
+                    class="hljs-keyword">function</span>(<span class="hljs-params">_</span>)</span>{
+  <span class="hljs-keyword">var</span> classify = <span class="hljs-function"><span
+                    class="hljs-keyword">function</span>(<span class="hljs-params">list</span>)</span>{
+    _.countBy(list,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                    class="hljs-params">num</span>)</span>{
+      <span class="hljs-keyword">return</span> num &gt; <span class="hljs-number">30</span> ? <span class="hljs-string">'old'</span> : <span
+                    class="hljs-string">'young'</span>;
+    })
+  };
+  <span class="hljs-keyword">return</span> {
+    <span class="hljs-attr">classify</span> :classify
+  };
+})
+
+<span class="hljs-comment">// 引用模块，将模块放在[]内</span>
+<span class="hljs-built_in">require</span>([<span class="hljs-string">'jquery'</span>, <span
+                    class="hljs-string">'math'</span>],<span class="hljs-function"><span
+                    class="hljs-keyword">function</span>(<span class="hljs-params">$, math</span>)</span>{
+  <span class="hljs-keyword">var</span> sum = math.add(<span class="hljs-number">10</span>,<span
+                    class="hljs-number">20</span>);
+  $(<span class="hljs-string">"#sum"</span>).html(sum);
+});</code></pre>
+        <p><strong>加载非规范的模块</strong><br>理论上，require.js加载的模块，必须是按照AMD规范、用define()函数定义的模块。但是实际上，虽然已经有一部分流行的函数库（比如jQuery）符合AMD规范，更多的库并不符合。那么，require.js是否能够加载非规范的模块呢？
+        </p>
+        <blockquote>
+            这样的模块在用require()加载之前，要先用require.config()方法，定义它们的一些特征。举例来说，underscore和backbone这两个库，都没有采用AMD规范编写。如果要加载它们的话，必须先定义它们的特征。
+        </blockquote>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="require.config({
+　　　　shim: {
+
+　　　　　　'underscore':{
+　　　　　　　　exports: '_'
+　　　　　　},
+　　　　　　'backbone': {
+　　　　　　　　deps: ['underscore', 'jquery'],
+　　　　　　　　exports: 'Backbone'
+　　　　　　}
+　　　　}
+});" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs java"><code>require.config({
+　　　　shim: {
+
+　　　　　　<span class="hljs-string">'underscore'</span>:{
+　　　　　　　　<span class="hljs-keyword">exports</span>: <span class="hljs-string">'_'</span>
+　　　　　　},
+　　　　　　<span class="hljs-string">'backbone'</span>: {
+　　　　　　　　deps: [<span class="hljs-string">'underscore'</span>, <span class="hljs-string">'jquery'</span>],
+　　　　　　　　<span class="hljs-keyword">exports</span>: <span class="hljs-string">'Backbone'</span>
+　　　　　　}
+　　　　}
+});</code></pre>
+        <blockquote>
+            require.config()接受一个配置对象，这个对象除了有前面说过的paths属性之外，还有一个shim属性，专门用来配置不兼容的模块。具体来说，每个模块要定义（1）exports值（输出的变量名），表明这个模块外部调用时的名称；（2）deps数组，表明该模块的依赖性。
+        </blockquote>
+        <p>比如，jQuery的插件可以这样定义：</p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="shim: {
+　　　　'jquery.scroll': {
+　　　　　　deps: ['jquery'],
+　　　　　　exports: 'jQuery.fn.scroll'
+　　　　}
+}" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs groovy"><code><span class="hljs-string">shim:</span> {
+　　　　<span class="hljs-string">'jquery.scroll'</span>: {
+<span class="hljs-symbol">　　　　　　deps:</span> [<span class="hljs-string">'jquery'</span>],
+<span class="hljs-symbol">　　　　　　exports:</span> <span class="hljs-string">'jQuery.fn.scroll'</span>
+　　　　}
+}</code></pre>
+        <p><strong>require.js插件</strong></p>
+        <p>require.js还提供一系列插件，实现一些特定的功能。domready插件，可以让回调函数在页面DOM结构加载完成后再运行。</p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="require(['domready!'], function (doc){
+　　// called once the DOM is ready
+});" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs javascript"><code><span class="hljs-built_in">require</span>([<span class="hljs-string">'domready!'</span>], <span
+                class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">doc</span>)</span>{
+　　<span class="hljs-comment">// called once the DOM is ready</span>
+});</code></pre>
+        <p>　　<br>text和image插件，则是允许require.js加载文本和图片文件。</p>
+        <div class="widget-codetool" style="display:none;">
+            <div class="widget-codetool--inner">
+                <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title=""
+                      data-original-title="全选"></span>
+                <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top"
+                      data-clipboard-text="define([
+　　'text!review.txt',
+　　'image!cat.jpg'
+　],
+    function(review,cat){
+　　　　console.log(review);
+　　　　document.body.appendChild(cat);
+　　}
+　);" title="" data-original-title="复制"></span>
+            </div>
+        </div>
+        <pre class="hljs lisp"><code>define([
+　　'text!review.txt',
+　　'image!cat.jpg'
+　],
+    function(<span class="hljs-name">review</span>,cat){
+　　　　console.log(<span class="hljs-name">review</span>)<span class="hljs-comment">;</span>
+　　　　document.body.appendChild(<span class="hljs-name">cat</span>)<span class="hljs-comment">;</span>
+　　}
+　)<span class="hljs-comment">;</span></code></pre>
+        <p>　类似的插件还有json和mdown，用于加载json文件和markdown文件。</p>
+        <p>本节参考文章：<a href="http://www.ruanyifeng.com/blog/2012/11/require_js.html" rel="nofollow noreferrer"
+                     target="_blank">require.js的用法</a></p>
+
+
+    </div>
+    <!--====================================================================================-->
+</div>
+
 <!--_footer 作为公共模版分离出去-->
 <script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="lib/layer/2.4/layer.js"></script>
@@ -37,65 +2275,10 @@
 <script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
-<script type="text/javascript" src="lib/zTree/v3/js/jquery.ztree.all-3.5.min.js"></script> 
-<!--<script type="text/javascript">-->
-<!--var setting = {-->
-	<!--view: {-->
-		<!--dblClickExpand: false,-->
-		<!--showLine: false,-->
-		<!--selectedMulti: false-->
-	<!--},-->
-	<!--data: {-->
-		<!--simpleData: {-->
-			<!--enable:true,-->
-			<!--idKey: "id",-->
-			<!--pIdKey: "pId",-->
-			<!--rootPId: ""-->
-		<!--}-->
-	<!--},-->
-	<!--callback: {-->
-		<!--beforeClick: function(treeId, treeNode) {-->
-			<!--var zTree = $.fn.zTree.getZTreeObj("tree");-->
-			<!--if (treeNode.isParent) {-->
-				<!--zTree.expandNode(treeNode);-->
-				<!--return false;-->
-			<!--} else {-->
-				<!--demoIframe.attr("src",treeNode.file + ".html");-->
-				<!--return true;-->
-			<!--}-->
-		<!--}-->
-	<!--}-->
-<!--};-->
+<script type="text/javascript" src="lib/zTree/v3/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
 
-<!--var zNodes =[-->
-	<!--{ id:1, pId:0, name:"一级分类", open:true},-->
-	<!--{ id:11, pId:1, name:"二级分类"},-->
-	<!--{ id:111, pId:11, name:"三级分类"},-->
-	<!--{ id:112, pId:11, name:"三级分类"},-->
-	<!--{ id:113, pId:11, name:"三级分类"},-->
-	<!--{ id:114, pId:11, name:"三级分类"},-->
-	<!--{ id:115, pId:11, name:"三级分类"},-->
-	<!--{ id:12, pId:1, name:"二级分类 1-2"},-->
-	<!--{ id:121, pId:12, name:"三级分类 1-2-1"},-->
-	<!--{ id:122, pId:12, name:"三级分类 1-2-2"},-->
-<!--];-->
-		<!---->
-<!--var code;-->
-		<!---->
-<!--function showCode(str) {-->
-	<!--if (!code) code = $("#code");-->
-	<!--code.empty();-->
-	<!--code.append("<li>"+str+"</li>");-->
-<!--}-->
-		<!---->
-<!--$(document).ready(function(){-->
-	<!--var t = $("#treeDemo");-->
-	<!--t = $.fn.zTree.init(t, setting, zNodes);-->
-	<!--demoIframe = $("#testIframe");-->
-	<!--//demoIframe.on("load", loadReady);-->
-	<!--var zTree = $.fn.zTree.getZTreeObj("tree");-->
-	<!--//zTree.selectNode(zTree.getNodeByParam("id",'11'));-->
-<!--});-->
-<!--</script>-->
 </body>
 </html>
